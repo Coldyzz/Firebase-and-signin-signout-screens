@@ -51,11 +51,17 @@
                                         <rect key="frame" x="138.5" y="211" width="75" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="SIGN IN"/>
+                                        <connections>
+                                            <action selector="signinClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XLD-Qv-ith"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RmO-5c-kOX">
                                         <rect key="frame" x="204" y="250" width="140" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Forgot password?"/>
+                                        <connections>
+                                            <action selector="forgotPasswordClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Idy-Aq-xY7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -89,7 +95,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="WhiteView" destination="nRe-uj-TAq" id="qyv-qi-qIP"/>
+                        <outlet property="emailField" destination="y9R-fR-Dhq" id="Dcu-tD-D5h"/>
+                        <outlet property="passwordField" destination="Bn5-2A-plf" id="hXJ-C1-1Qg"/>
+                        <outlet property="whiteView" destination="nRe-uj-TAq" id="ucG-t5-cwy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

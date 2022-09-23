@@ -9,15 +9,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var WhiteView: UIView!
-  
+    @IBOutlet weak var whiteView: UIView!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    let whiteView = WhiteView
+    let whiteView = whiteView
         whiteView!.layer.cornerRadius = 16
        
     }
-
+    @IBAction func signinClicked(_ sender: Any) {
+    }
+    
+    @IBAction func forgotPasswordClicked(_ sender: Any) {
+    }
 }
 
