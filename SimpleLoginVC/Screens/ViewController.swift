@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var whiteView: UIView!
     @IBOutlet weak var emailField: UITextField!
@@ -21,12 +21,13 @@ class ViewController: UIViewController {
         whiteView.layer.cornerRadius = 16
         emailField.layer.borderWidth = 0.5
         emailField.layer.cornerRadius = 8
+        emailField.delegate = self
         passwordField.layer.borderWidth = 0.5
         passwordField.layer.cornerRadius = 8
+        passwordField.delegate = self
         
     }
-    @IBAction func signinClicked(_ sender: Any) {
-        
+    fileprivate func signIn() {
         let optionalEmail = emailField.text
         if let email = optionalEmail {
             if email.contains("@") {
@@ -56,7 +57,20 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func signinClicked(_ sender: Any) {
+        signIn()
+    }
+    
     @IBAction func forgotPasswordClicked(_ sender: Any) {
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailField {
+            passwordField.becomeFirstResponder()
+        } else if textField == passwordField {
+            signIn()
+        }
+        return true
     }
 }
 
