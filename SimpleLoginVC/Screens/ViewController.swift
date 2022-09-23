@@ -9,11 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var WhiteView: UIView!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+    let whiteView = WhiteView
+        whiteView!.layer.cornerRadius = 16
+       
     }
-
 
 }
 
