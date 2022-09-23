@@ -18,8 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let whiteView = whiteView
-        whiteView!.layer.cornerRadius = 16
+        whiteView.layer.cornerRadius = 16
         emailField.layer.borderWidth = 0.5
         emailField.layer.cornerRadius = 8
         passwordField.layer.borderWidth = 0.5
@@ -32,8 +31,11 @@ class ViewController: UIViewController {
         if let email = optionalEmail {
             if email.contains("@") {
                 emailField.layer.borderColor = UIColor.green.cgColor
+                errorEmailLabel.isHidden = true
             } else {
                 emailField.layer.borderColor = UIColor.red.cgColor
+                errorEmailLabel.text = "Email is invalid format"
+                errorEmailLabel.isHidden = false
             }
         } else {
             emailField.layer.borderColor = UIColor.red.cgColor
@@ -43,8 +45,11 @@ class ViewController: UIViewController {
         if let password = optionalPassword {
             if password.count >= 6 {
                 emailField.layer.borderColor = UIColor.green.cgColor
+                errorPasswordLabel.isHidden = true
             } else {
                 passwordField.layer.borderColor = UIColor.red.cgColor
+                errorPasswordLabel.text = "Password must contains six or more  characters"
+                errorPasswordLabel.isHidden = false
             }
         } else {
             passwordField.layer.borderColor = UIColor.red.cgColor
