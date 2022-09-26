@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 protocol AuthenticationService {
     func signIn(email: String, password: String) -> Void
@@ -14,7 +15,7 @@ protocol AuthenticationService {
 }
 class FirebaseAuthenticationService: AuthenticationService {
     func signIn(email: String, password: String) {
-        
+        Auth.auth().signIn(withEmail: email, password: password)
     }
     
     func signUp(email: String, password: String) {
