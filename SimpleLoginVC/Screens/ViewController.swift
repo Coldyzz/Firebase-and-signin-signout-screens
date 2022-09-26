@@ -45,7 +45,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let optionalPassword = passwordField.text
         if let password = optionalPassword {
             if password.count >= 6 {
-                emailField.layer.borderColor = UIColor.green.cgColor
+                passwordField.layer.borderColor = UIColor.green.cgColor
                 errorPasswordLabel.isHidden = true
             } else {
                 passwordField.layer.borderColor = UIColor.red.cgColor
