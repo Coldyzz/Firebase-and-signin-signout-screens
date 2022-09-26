@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EF81A01128E210370029516D /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = EF81A01028E210370029516D /* GoogleService-Info (1).plist */; };
+		EF81A01128E210370029516D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF81A01028E210370029516D /* GoogleService-Info.plist */; };
 		EF81A01428E212640029516D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EF81A01328E212640029516D /* FirebaseAnalytics */; };
 		EF81A01628E212640029516D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EF81A01528E212640029516D /* FirebaseAuth */; };
 		EF8B60DD28DDE9D1003F906E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8B60DC28DDE9D1003F906E /* AppDelegate.swift */; };
@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EF81A01028E210370029516D /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
+		EF81A01028E210370029516D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF8B60D928DDE9D1003F906E /* SimpleLoginVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleLoginVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF8B60DC28DDE9D1003F906E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF8B60DE28DDE9D1003F906E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 				EF8B60E528DDE9D9003F906E /* Assets.xcassets */,
 				EF8B60E728DDE9D9003F906E /* LaunchScreen.storyboard */,
 				EF8B60EA28DDE9D9003F906E /* Info.plist */,
-				EF81A01028E210370029516D /* GoogleService-Info (1).plist */,
+				EF81A01028E210370029516D /* GoogleService-Info.plist */,
 			);
 			path = SimpleLoginVC;
 			sourceTree = "<group>";
@@ -161,7 +161,7 @@
 				EF8B60E928DDE9D9003F906E /* LaunchScreen.storyboard in Resources */,
 				EF8B60E628DDE9D9003F906E /* Assets.xcassets in Resources */,
 				EF8B60E428DDE9D1003F906E /* Main.storyboard in Resources */,
-				EF81A01128E210370029516D /* GoogleService-Info (1).plist in Resources */,
+				EF81A01128E210370029516D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
