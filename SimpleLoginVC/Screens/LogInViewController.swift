@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LogInViewController.swift
 //  SimpleLoginVC
 //
 //  Created by Дима Холод on 23.09.2022.
@@ -7,13 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class LogInViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var whiteView: UIView!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var errorEmailLabel: UILabel!
     @IBOutlet weak var errorPasswordLabel: UILabel!
+    
+    let authenticationService: AuthenticationService = FirebaseAuthenticationService()
       
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +57,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         } else {
             passwordField.layer.borderColor = UIColor.red.cgColor
         }
+        
+        authenticationService.signIn(email: email, password: password)
     }
     
     @IBAction func signinClicked(_ sender: Any) {
