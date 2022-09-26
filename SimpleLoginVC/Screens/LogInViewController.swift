@@ -16,7 +16,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var errorPasswordLabel: UILabel!
     
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
-      
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,32 +31,26 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
     fileprivate func signIn() {
         let optionalEmail = emailField.text
-        if let email = optionalEmail {
-            if email.contains("@") {
-                emailField.layer.borderColor = UIColor.green.cgColor
-                errorEmailLabel.isHidden = true
-            } else {
-                emailField.layer.borderColor = UIColor.red.cgColor
-                errorEmailLabel.text = "Email is invalid format"
-                errorEmailLabel.isHidden = false
-            }
-        } else {
+        
+        guard let email = optionalEmail, email.contains("@") else {
             emailField.layer.borderColor = UIColor.red.cgColor
+            errorEmailLabel.text = "Email is invalid format"
+            errorEmailLabel.isHidden = false
+            return
         }
+        emailField.layer.borderColor = UIColor.green.cgColor
+        errorEmailLabel.isHidden = true
         
         let optionalPassword = passwordField.text
-        if let password = optionalPassword {
-            if password.count >= 6 {
-                passwordField.layer.borderColor = UIColor.green.cgColor
-                errorPasswordLabel.isHidden = true
-            } else {
-                passwordField.layer.borderColor = UIColor.red.cgColor
-                errorPasswordLabel.text = "Password must contains six or more  characters"
-                errorPasswordLabel.isHidden = false
-            }
-        } else {
+        
+        guard let password = optionalPassword, password.count >= 6 else {
             passwordField.layer.borderColor = UIColor.red.cgColor
+            errorPasswordLabel.text = "Password must contains six or more  characters"
+            errorPasswordLabel.isHidden = false
+            return
         }
+        passwordField.layer.borderColor = UIColor.green.cgColor
+        errorPasswordLabel.isHidden = true
         
         authenticationService.signIn(email: email, password: password)
     }
