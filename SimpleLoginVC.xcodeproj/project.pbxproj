@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF81A01128E210370029516D /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = EF81A01028E210370029516D /* GoogleService-Info (1).plist */; };
+		EF81A01428E212640029516D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EF81A01328E212640029516D /* FirebaseAnalytics */; };
+		EF81A01628E212640029516D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EF81A01528E212640029516D /* FirebaseAuth */; };
 		EF8B60DD28DDE9D1003F906E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8B60DC28DDE9D1003F906E /* AppDelegate.swift */; };
 		EF8B60DF28DDE9D1003F906E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8B60DE28DDE9D1003F906E /* SceneDelegate.swift */; };
 		EF8B60E128DDE9D1003F906E /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8B60E028DDE9D1003F906E /* LogInViewController.swift */; };
@@ -17,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF81A01028E210370029516D /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
 		EF8B60D928DDE9D1003F906E /* SimpleLoginVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleLoginVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF8B60DC28DDE9D1003F906E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF8B60DE28DDE9D1003F906E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF81A01428E212640029516D /* FirebaseAnalytics in Frameworks */,
+				EF81A01628E212640029516D /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +72,7 @@
 				EF8B60E528DDE9D9003F906E /* Assets.xcassets */,
 				EF8B60E728DDE9D9003F906E /* LaunchScreen.storyboard */,
 				EF8B60EA28DDE9D9003F906E /* Info.plist */,
+				EF81A01028E210370029516D /* GoogleService-Info (1).plist */,
 			);
 			path = SimpleLoginVC;
 			sourceTree = "<group>";
@@ -102,6 +109,10 @@
 			dependencies = (
 			);
 			name = SimpleLoginVC;
+			packageProductDependencies = (
+				EF81A01328E212640029516D /* FirebaseAnalytics */,
+				EF81A01528E212640029516D /* FirebaseAuth */,
+			);
 			productName = SimpleLoginVC;
 			productReference = EF8B60D928DDE9D1003F906E /* SimpleLoginVC.app */;
 			productType = "com.apple.product-type.application";
@@ -130,6 +141,9 @@
 				Base,
 			);
 			mainGroup = EF8B60D028DDE9D1003F906E;
+			packageReferences = (
+				EF81A01228E212640029516D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = EF8B60DA28DDE9D1003F906E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -147,6 +161,7 @@
 				EF8B60E928DDE9D9003F906E /* LaunchScreen.storyboard in Resources */,
 				EF8B60E628DDE9D9003F906E /* Assets.xcassets in Resources */,
 				EF8B60E428DDE9D1003F906E /* Main.storyboard in Resources */,
+				EF81A01128E210370029516D /* GoogleService-Info (1).plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +393,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EF81A01228E212640029516D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EF81A01328E212640029516D /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF81A01228E212640029516D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		EF81A01528E212640029516D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF81A01228E212640029516D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EF8B60D128DDE9D1003F906E /* Project object */;
 }
