@@ -9,13 +9,22 @@ import UIKit
 
 class RegistrationViewController: UIViewController {
 
+    @IBOutlet weak var whiteView: UIView!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var errorEmailLabel: UILabel!
+    @IBOutlet weak var errorPasswordLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func signUpClicked(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -138,10 +138,10 @@
             </objects>
             <point key="canvasLocation" x="-23" y="78"/>
         </scene>
-        <!--View Controller-->
+        <!--Registration View Controller-->
         <scene sceneID="Rlb-7s-S3A">
             <objects>
-                <viewController id="OoI-Hu-phd" sceneMemberID="viewController">
+                <viewController id="OoI-Hu-phd" customClass="RegistrationViewController" customModule="SimpleLoginVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fZ2-ih-FaD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -182,6 +182,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="SIGN UP"/>
                                         <connections>
+                                            <action selector="signUpClicked:" destination="OoI-Hu-phd" eventType="touchUpInside" id="NcF-I4-juF"/>
                                             <action selector="signinClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tek-SM-Kid"/>
                                         </connections>
                                     </button>
@@ -232,6 +233,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nFd-ub-buR"/>
+                    <connections>
+                        <outlet property="emailField" destination="6Bg-MS-aoa" id="AR2-p6-h6I"/>
+                        <outlet property="errorEmailLabel" destination="05u-Cl-3E8" id="ZfT-D4-2gE"/>
+                        <outlet property="errorPasswordLabel" destination="aXB-2N-gPy" id="CqG-9e-ci7"/>
+                        <outlet property="passwordField" destination="Ah2-Qu-pBD" id="pgh-6z-0uc"/>
+                        <outlet property="whiteView" destination="O7y-NH-AOJ" id="O49-ER-5F3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tDS-8P-udN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
