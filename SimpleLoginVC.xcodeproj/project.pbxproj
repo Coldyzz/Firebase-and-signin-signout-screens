@@ -10,6 +10,7 @@
 		EF81A01128E210370029516D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF81A01028E210370029516D /* GoogleService-Info.plist */; };
 		EF81A01428E212640029516D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EF81A01328E212640029516D /* FirebaseAnalytics */; };
 		EF81A01628E212640029516D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EF81A01528E212640029516D /* FirebaseAuth */; };
+		EF81A01828E34A2B0029516D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF81A01728E34A2B0029516D /* RegistrationViewController.swift */; };
 		EF8B60DD28DDE9D1003F906E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8B60DC28DDE9D1003F906E /* AppDelegate.swift */; };
 		EF8B60DF28DDE9D1003F906E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8B60DE28DDE9D1003F906E /* SceneDelegate.swift */; };
 		EF8B60E128DDE9D1003F906E /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8B60E028DDE9D1003F906E /* LogInViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		EF81A01028E210370029516D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EF81A01728E34A2B0029516D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		EF8B60D928DDE9D1003F906E /* SimpleLoginVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleLoginVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF8B60DC28DDE9D1003F906E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF8B60DE28DDE9D1003F906E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				EF8B60E028DDE9D1003F906E /* LogInViewController.swift */,
+				EF81A01728E34A2B0029516D /* RegistrationViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				EF8B60DD28DDE9D1003F906E /* AppDelegate.swift in Sources */,
 				EF8B60DF28DDE9D1003F906E /* SceneDelegate.swift in Sources */,
 				EF8E88D328E1FF2300A70128 /* AuthenticationService.swift in Sources */,
+				EF81A01828E34A2B0029516D /* RegistrationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
