@@ -7,8 +7,8 @@
 
 import UIKit
 
-class RegistrationViewController: UIViewController {
-
+class RegistrationViewController: UIViewController, UITextFieldDelegate {
+    
     @IBOutlet weak var whiteView: UIView!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -18,21 +18,17 @@ class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+               
+        whiteView.layer.cornerRadius = 16
+        emailField.layer.borderWidth = 0.5
+        emailField.layer.cornerRadius = 8
+        emailField.delegate = self
+        passwordField.layer.borderWidth = 0.5
+        passwordField.layer.cornerRadius = 8
+        passwordField.delegate = self
     }
     
     @IBAction func signUpClicked(_ sender: Any) {
+        
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
