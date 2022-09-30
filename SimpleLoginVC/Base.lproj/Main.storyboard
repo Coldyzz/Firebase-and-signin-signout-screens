@@ -155,7 +155,7 @@
             </objects>
             <point key="canvasLocation" x="-23" y="78"/>
         </scene>
-        <!--Back-->
+        <!--Registration View Controller-->
         <scene sceneID="Rlb-7s-S3A">
             <objects>
                 <viewController restorationIdentifier="RegistrationViewController" storyboardIdentifier="RegistrationViewController" id="OoI-Hu-phd" customClass="RegistrationViewController" customModule="SimpleLoginVC" customModuleProvider="target" sceneMemberID="viewController">
@@ -242,14 +242,14 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MgC-FC-W10"/>
-                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
                             <constraint firstItem="O7y-NH-AOJ" firstAttribute="width" secondItem="fZ2-ih-FaD" secondAttribute="width" multiplier="0.85" id="0L5-OJ-3kg"/>
                             <constraint firstItem="O7y-NH-AOJ" firstAttribute="centerY" secondItem="fZ2-ih-FaD" secondAttribute="centerY" id="IVJ-6v-bB3"/>
                             <constraint firstItem="O7y-NH-AOJ" firstAttribute="centerX" secondItem="fZ2-ih-FaD" secondAttribute="centerX" id="us6-6F-wEH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Back" id="nFd-ub-buR"/>
+                    <navigationItem key="navigationItem" id="nFd-ub-buR"/>
                     <connections>
                         <outlet property="emailField" destination="6Bg-MS-aoa" id="AR2-p6-h6I"/>
                         <outlet property="errorEmailLabel" destination="05u-Cl-3E8" id="ZfT-D4-2gE"/>
@@ -272,6 +272,9 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
