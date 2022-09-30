@@ -62,6 +62,11 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     @IBAction func forgotPasswordClicked(_ sender: Any) {
     }
     
+    @IBAction func createNewAccountClicked(_ sender: Any) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailField {
             passwordField.becomeFirstResponder()
@@ -72,3 +77,4 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
+// разделить на вью поля ввода сразу со всеми настройками
