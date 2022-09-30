@@ -10,8 +10,8 @@ import UIKit
 class LogInViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var whiteView: UIView!
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var emailField: EmailTextField!
+    @IBOutlet weak var passwordField: PasswordTextField!
     @IBOutlet weak var errorEmailLabel: UILabel!
     @IBOutlet weak var errorPasswordLabel: UILabel!
     
@@ -21,38 +21,17 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         whiteView.layer.cornerRadius = 16
-        emailField.layer.borderWidth = 0.5
-        emailField.layer.cornerRadius = 8
         emailField.delegate = self
-        passwordField.layer.borderWidth = 0.5
-        passwordField.layer.cornerRadius = 8
         passwordField.delegate = self
         
     }
-    fileprivate func signIn() {
-        let optionalEmail = emailField.text
+    func signIn() {
         
-        guard let email = optionalEmail, email.contains("@") else {
-            emailField.layer.borderColor = UIColor.red.cgColor
-            errorEmailLabel.text = "Email is invalid format"
-            errorEmailLabel.isHidden = false
-            return
-        }
-        emailField.layer.borderColor = UIColor.green.cgColor
-        errorEmailLabel.isHidden = true
+        emailField.validateEmailTextField(errorLabel: errorEmailLabel)
         
-        let optionalPassword = passwordField.text
+        passwordField.validatePasswordTextField(errorLabel: errorPasswordLabel)
         
-        guard let password = optionalPassword, password.count >= 6 else {
-            passwordField.layer.borderColor = UIColor.red.cgColor
-            errorPasswordLabel.text = "Password must contains six or more  characters"
-            errorPasswordLabel.isHidden = false
-            return
-        }
-        passwordField.layer.borderColor = UIColor.green.cgColor
-        errorPasswordLabel.isHidden = true
-        
-        authenticationService.signIn(email: email, password: password)
+        authenticationService.signIn(email: emailField.text!, password: passwordField.text!)
     }
     
     @IBAction func signinClicked(_ sender: Any) {

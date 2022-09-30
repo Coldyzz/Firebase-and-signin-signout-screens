@@ -14,6 +14,7 @@ protocol AuthenticationService {
     func signUp(email: String, password: String) -> Void
 }
 class FirebaseAuthenticationService: AuthenticationService {
+    
     func signIn(email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) 
     }
