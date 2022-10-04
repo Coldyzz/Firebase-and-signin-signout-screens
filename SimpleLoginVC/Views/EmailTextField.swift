@@ -17,16 +17,17 @@ class EmailTextField: UITextField {
     }
     
     
-    func validateEmailTextField(errorLabel: UILabel) {
+    func validateEmailTextField(errorLabel: UILabel) -> String? {
         let optionalEmail = text
         
         guard let email = optionalEmail, email.contains("@") else {
             layer.borderColor = UIColor.red.cgColor
             errorLabel.text = "Email is invalid format"
             errorLabel.isHidden = false
-            return
+            return nil
         }
         layer.borderColor = UIColor.green.cgColor
         errorLabel.isHidden = true
+        return email
     }
 }

@@ -16,16 +16,18 @@ class PasswordTextField: UITextField {
         layer.cornerRadius = 8
     }
     
-    func validatePasswordTextField(errorLabel: UILabel){
+    func validatePasswordTextField(errorLabel: UILabel) -> String? {
         let optionalPassword = text
         
         guard let password = optionalPassword, password.count >= 6 else {
             layer.borderColor = UIColor.red.cgColor
             errorLabel.text = "Password must contains six or more  characters"
             errorLabel.isHidden = false
-            return
+            return nil
         }
         layer.borderColor = UIColor.green.cgColor
         errorLabel.isHidden = true
+        
+        return password
     }
 }
