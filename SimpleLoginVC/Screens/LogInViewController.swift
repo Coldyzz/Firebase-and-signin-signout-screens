@@ -35,12 +35,13 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        authenticationService.signIn(email: email, password: password)
-        
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController else {
-            return
+        authenticationService.signIn(email: email, password: password) { wasAuthOk in
+            
+            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController else {
+                return
+            }
+            self.navigationController?.pushViewController(vc, animated: true)
         }
-        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func signinClicked(_ sender: Any) {
@@ -52,10 +53,10 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func createNewAccountClicked(_ sender: Any) {
         
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegistrationViewController") as? RegistrationViewController else {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "RegistrationViewController") as? RegistrationViewController else {
             return
         }
-        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
