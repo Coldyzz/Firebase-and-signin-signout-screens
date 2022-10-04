@@ -34,6 +34,9 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
             return
         }
         authenticationService.signUp(email: email, password: password)
+        
+        navigationController?.popViewController(animated: true)
+        
     }
     @IBAction func signUpClicked(_ sender: Any) {
         signUp()

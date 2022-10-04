@@ -27,7 +27,7 @@
         <!--Log In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LogInViewController" customModule="SimpleLoginVC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogInViewController" id="BYZ-38-t0r" customClass="LogInViewController" customModule="SimpleLoginVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,7 +158,7 @@
         <!--Home View Controller-->
         <scene sceneID="8Us-qu-bc5">
             <objects>
-                <viewController id="Uty-Z3-fa0" customClass="HomeViewController" customModule="SimpleLoginVC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="Uty-Z3-fa0" customClass="HomeViewController" customModule="SimpleLoginVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mMv-aC-49B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -173,7 +173,7 @@
         <!--Registration View Controller-->
         <scene sceneID="Rlb-7s-S3A">
             <objects>
-                <viewController restorationIdentifier="RegistrationViewController" storyboardIdentifier="RegistrationViewController" id="OoI-Hu-phd" customClass="RegistrationViewController" customModule="SimpleLoginVC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistrationViewController" id="OoI-Hu-phd" customClass="RegistrationViewController" customModule="SimpleLoginVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fZ2-ih-FaD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
