@@ -42,6 +42,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                     return
                 }
                 self.navigationController?.pushViewController(vc, animated: true)
+                
             } else {
                 let alert = UIAlertController(title: "",
                                               message: "Something was wrong, please try again",
