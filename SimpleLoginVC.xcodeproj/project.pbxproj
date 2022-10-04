@@ -10,6 +10,7 @@
 		EF776BF928E747CE0016CB5E /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF776BF828E747CE0016CB5E /* EmailTextField.swift */; };
 		EF776BFB28E74BBE0016CB5E /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF776BFA28E74BBE0016CB5E /* PasswordTextField.swift */; };
 		EF776BFD28EC8B320016CB5E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF776BFC28EC8B320016CB5E /* HomeViewController.swift */; };
+		EF776C0028EC9D3B0016CB5E /* PostsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF776BFF28EC9D3B0016CB5E /* PostsRepository.swift */; };
 		EF81A01128E210370029516D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF81A01028E210370029516D /* GoogleService-Info.plist */; };
 		EF81A01428E212640029516D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EF81A01328E212640029516D /* FirebaseAnalytics */; };
 		EF81A01628E212640029516D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EF81A01528E212640029516D /* FirebaseAuth */; };
@@ -27,6 +28,7 @@
 		EF776BF828E747CE0016CB5E /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
 		EF776BFA28E74BBE0016CB5E /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		EF776BFC28EC8B320016CB5E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EF776BFF28EC9D3B0016CB5E /* PostsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRepository.swift; sourceTree = "<group>"; };
 		EF81A01028E210370029516D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF81A01728E34A2B0029516D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		EF8B60D928DDE9D1003F906E /* SimpleLoginVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleLoginVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +64,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		EF776BFE28EC9D040016CB5E /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				EF776BFF28EC9D3B0016CB5E /* PostsRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		EF8B60D028DDE9D1003F906E = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +91,7 @@
 		EF8B60DB28DDE9D1003F906E /* SimpleLoginVC */ = {
 			isa = PBXGroup;
 			children = (
+				EF776BFE28EC9D040016CB5E /* Repositories */,
 				EF776BF728E747AD0016CB5E /* Views */,
 				EF8E88D128E1FECA00A70128 /* Services */,
 				EF8B60F028DDF84A003F906E /* Screens */,
@@ -199,6 +210,7 @@
 				EF776BF928E747CE0016CB5E /* EmailTextField.swift in Sources */,
 				EF8B60DF28DDE9D1003F906E /* SceneDelegate.swift in Sources */,
 				EF8E88D328E1FF2300A70128 /* AuthenticationService.swift in Sources */,
+				EF776C0028EC9D3B0016CB5E /* PostsRepository.swift in Sources */,
 				EF81A01828E34A2B0029516D /* RegistrationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
