@@ -27,10 +27,13 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     
     func signUp() {
         
-        emailField.validateEmailTextField(errorLabel: errorEmailLabel)
-        passwordField.validatePasswordTextField(errorLabel: errorPasswordLabel)
-        
-        authenticationService.signUp(email: emailField.text!, password: passwordField.text!)
+        guard let email = emailField.validateEmailTextField(errorLabel: errorEmailLabel) else {
+            return
+        }
+        guard let password = passwordField.validatePasswordTextField(errorLabel: errorPasswordLabel) else {
+            return
+        }
+        authenticationService.signUp(email: email, password: password)
     }
     @IBAction func signUpClicked(_ sender: Any) {
         signUp()

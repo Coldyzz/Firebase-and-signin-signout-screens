@@ -27,11 +27,15 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
     func signIn() {
         
-        emailField.validateEmailTextField(errorLabel: errorEmailLabel)
+        guard let email = emailField.validateEmailTextField(errorLabel: errorEmailLabel) else {
+            return
+        }
         
-        passwordField.validatePasswordTextField(errorLabel: errorPasswordLabel)
+        guard let password = passwordField.validatePasswordTextField(errorLabel: errorPasswordLabel) else {
+            return
+        }
         
-        authenticationService.signIn(email: emailField.text!, password: passwordField.text!)
+        authenticationService.signIn(email: email, password: password)
     }
     
     @IBAction func signinClicked(_ sender: Any) {
@@ -56,4 +60,4 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
-// разделить на вью поля ввода сразу со всеми настройками
+
