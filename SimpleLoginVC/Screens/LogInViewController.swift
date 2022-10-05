@@ -33,7 +33,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         guard let password = passwordField.validatePasswordTextField(errorLabel: errorPasswordLabel) else {
             return
         }
-        
         authenticationService.signIn(email: email, password: password) { wasAuthOk in
             
             if wasAuthOk {
