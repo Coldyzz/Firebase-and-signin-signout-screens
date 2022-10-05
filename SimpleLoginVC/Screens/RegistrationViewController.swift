@@ -35,6 +35,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         }
         authenticationService.signIn(email: email, password: password) { wasAuthOk in
             if wasAuthOk {
+                // for testing useremail: test3@test.com pass: 123123
                 let alert = UIAlertController(title: "",
                                               message: "Еhis email is already registered",
                                               preferredStyle: UIAlertController.Style.alert)
