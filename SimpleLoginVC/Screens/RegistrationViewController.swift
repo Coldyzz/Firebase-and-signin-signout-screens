@@ -26,7 +26,6 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     }
     
     func signUp() {
-        
         guard let email = emailField.validateEmailTextField(errorLabel: errorEmailLabel) else {
             return
         }
@@ -52,7 +51,6 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     @IBAction func signUpClicked(_ sender: Any) {
         signUp()
     }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailField {
             passwordField.becomeFirstResponder()

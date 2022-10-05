@@ -29,6 +29,4 @@ class FirebaseAuthenticationService: AuthenticationService {
     func signUp(email: String, password: String) {
         Auth.auth().createUser(withEmail: email, password: password)
     }
-    
-    
 }

@@ -18,7 +18,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         postsTable.dataSource = self
-        
+        postsTable.register(UINib(nibName: "PostCell", bundle: nil), forCellReuseIdentifier: "postRow")
         postsRepository.getAll { posts in
             self.posts = posts
             postsTable.reloadData()
@@ -28,6 +28,11 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         return posts.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "postRow",
+                                                       for: indexPath) as? PostCell else {
+            fatalError("Cell is not expected type")
+        }
+        cell.post = posts[indexPath.row]
+        return cell 
     }
 }

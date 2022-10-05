@@ -23,10 +23,9 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         whiteView.layer.cornerRadius = 16
         emailField.delegate = self
         passwordField.delegate = self
-        
     }
+    
     func signIn() {
-        
         guard let email = emailField.validateEmailTextField(errorLabel: errorEmailLabel) else {
             return
         }
@@ -56,10 +55,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     @IBAction func signinClicked(_ sender: Any) {
         signIn()
     }
-    
     @IBAction func forgotPasswordClicked(_ sender: Any) {
     }
-    
     @IBAction func createNewAccountClicked(_ sender: Any) {
         
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "RegistrationViewController") as? RegistrationViewController else {
