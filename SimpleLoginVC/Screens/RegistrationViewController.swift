@@ -33,10 +33,20 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         guard let password = passwordField.validatePasswordTextField(errorLabel: errorPasswordLabel) else {
             return
         }
-        authenticationService.signUp(email: email, password: password)
-        
-        navigationController?.popViewController(animated: true)
-        
+        authenticationService.signIn(email: email, password: password) { wasAuthOk in
+            if wasAuthOk {
+                let alert = UIAlertController(title: "",
+                                              message: "Еhis email is already registered",
+                                              preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok",
+                                              style: UIAlertAction.Style.default))
+                self.present(alert, animated: true)
+                
+            } else {
+                self.authenticationService.signUp(email: email, password: password)
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
     @IBAction func signUpClicked(_ sender: Any) {
         signUp()

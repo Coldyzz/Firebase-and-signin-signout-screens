@@ -30,7 +30,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         guard let email = emailField.validateEmailTextField(errorLabel: errorEmailLabel) else {
             return
         }
-        
         guard let password = passwordField.validatePasswordTextField(errorLabel: errorPasswordLabel) else {
             return
         }
@@ -50,7 +49,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                 
                 alert.addAction(UIAlertAction(title: "Ok",
                                               style: UIAlertAction.Style.default))
-                
                 self.present(alert, animated: true)
             }
         }

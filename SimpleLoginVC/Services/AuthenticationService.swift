@@ -23,8 +23,6 @@ class FirebaseAuthenticationService: AuthenticationService {
             } else {
                 completion(false)
             }
-            //print("\(#file) \(#function): UserID = \(result?.user.uid)")
-            // print("\(#file) \(#function): Failed \(error)")
         }
     }
     
