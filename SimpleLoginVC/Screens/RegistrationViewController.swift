@@ -14,6 +14,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var errorEmailLabel: UILabel!
     @IBOutlet weak var errorPasswordLabel: UILabel!
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         whiteView.layer.cornerRadius = 16
@@ -27,18 +28,16 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         guard let password = passwordField.validatePasswordTextField(errorLabel: errorPasswordLabel) else {
             return
         }
-        authenticationService.signIn(email: email, password: password) { wasAuthOk in
+        authenticationService.signUp(email: email, password: password) { wasAuthOk in
             if wasAuthOk {
-                // for testing useremail: test3@test.com pass: 123123
+                self.navigationController?.popViewController(animated: true)
+            } else {
                 let alert = UIAlertController(title: "",
-                                              message: "Еhis email is already registered",
+                                              message: "Something was wrong, please try again",
                                               preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "Ok",
                                               style: UIAlertAction.Style.default))
                 self.present(alert, animated: true)
-            } else {
-                self.authenticationService.signUp(email: email, password: password)
-                self.navigationController?.popViewController(animated: true)
             }
         }
     }
