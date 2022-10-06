@@ -167,6 +167,15 @@
                                 <rect key="frame" x="20.5" y="89.5" width="373" height="717"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSA-9d-zEk">
+                                <rect key="frame" x="318" y="38" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutClicked:" destination="Uty-Z3-fa0" eventType="touchUpInside" id="G1Y-zd-kIt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0Ds-8x-O3r"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

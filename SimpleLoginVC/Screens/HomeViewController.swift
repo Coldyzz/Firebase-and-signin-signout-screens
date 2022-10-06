@@ -11,6 +11,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var postsTable: UITableView!
     let postsRepository: PostsRepository = DummyPostsRepository()
     var posts: [Post] = []
+    let authenticationService: AuthenticationService = FirebaseAuthenticationService()
     override func viewDidLoad() {
         super.viewDidLoad()
         postsTable.dataSource = self
@@ -30,5 +31,8 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         }
         cell.post = posts[indexPath.row]
         return cell
+    }
+    @IBAction func logoutClicked(_ sender: Any) {
+        authenticationService.logout()
     }
 }
