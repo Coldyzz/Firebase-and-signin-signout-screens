@@ -164,12 +164,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="b3f-iE-pIj">
-                                <rect key="frame" x="20.5" y="89.5" width="373" height="717"/>
+                                <rect key="frame" x="20.5" y="134.5" width="373" height="627"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSA-9d-zEk">
-                                <rect key="frame" x="318" y="38" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSA-9d-zEk">
+                                <rect key="frame" x="306" y="32" width="100" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="7qP-I5-X5q"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Logout"/>
                                 <connections>
@@ -180,10 +182,12 @@
                         <viewLayoutGuide key="safeArea" id="0Ds-8x-O3r"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="0Ds-8x-O3r" firstAttribute="trailing" secondItem="fSA-9d-zEk" secondAttribute="trailing" constant="8" id="PbZ-U2-4dT"/>
                             <constraint firstItem="b3f-iE-pIj" firstAttribute="width" secondItem="mMv-aC-49B" secondAttribute="width" multiplier="0.9" id="Pyx-Fe-d6b"/>
-                            <constraint firstItem="b3f-iE-pIj" firstAttribute="height" secondItem="mMv-aC-49B" secondAttribute="height" multiplier="0.8" id="UA7-Xs-ZuI"/>
+                            <constraint firstItem="b3f-iE-pIj" firstAttribute="height" secondItem="mMv-aC-49B" secondAttribute="height" multiplier="0.7" id="UA7-Xs-ZuI"/>
                             <constraint firstItem="b3f-iE-pIj" firstAttribute="centerY" secondItem="mMv-aC-49B" secondAttribute="centerY" id="iyI-c3-heh"/>
                             <constraint firstItem="b3f-iE-pIj" firstAttribute="centerX" secondItem="mMv-aC-49B" secondAttribute="centerX" id="tHW-XP-pcb"/>
+                            <constraint firstItem="fSA-9d-zEk" firstAttribute="top" secondItem="mMv-aC-49B" secondAttribute="top" constant="32" id="xtT-67-hTk"/>
                         </constraints>
                     </view>
                     <connections>
