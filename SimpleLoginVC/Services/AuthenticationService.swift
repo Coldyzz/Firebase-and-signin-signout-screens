@@ -10,14 +10,12 @@ import FirebaseAuth
 
 protocol AuthenticationService {
     func signIn(email: String, password: String, completion: @escaping (Bool) -> Void) -> Void
-    
     func signUp(email: String, password: String) -> Void
 }
+
 class FirebaseAuthenticationService: AuthenticationService {
-    
     func signIn(email: String, password: String, completion: @escaping (Bool) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
-            
             if result?.user != nil {
                 completion(true)
             } else {
@@ -25,7 +23,6 @@ class FirebaseAuthenticationService: AuthenticationService {
             }
         }
     }
-    
     func signUp(email: String, password: String) {
         Auth.auth().createUser(withEmail: email, password: password)
     }

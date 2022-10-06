@@ -8,23 +8,18 @@
 import UIKit
 
 class LogInViewController: UIViewController, UITextFieldDelegate {
-    
     @IBOutlet weak var whiteView: UIView!
     @IBOutlet weak var emailField: EmailTextField!
     @IBOutlet weak var passwordField: PasswordTextField!
     @IBOutlet weak var errorEmailLabel: UILabel!
     @IBOutlet weak var errorPasswordLabel: UILabel!
-    
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         whiteView.layer.cornerRadius = 16
         emailField.delegate = self
         passwordField.delegate = self
     }
-    
     func signIn() {
         guard let email = emailField.validateEmailTextField(errorLabel: errorEmailLabel) else {
             return
@@ -33,38 +28,34 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             return
         }
         authenticationService.signIn(email: email, password: password) { wasAuthOk in
-            
             if wasAuthOk {
-                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController else {
+                guard let viewCon = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController")
+                        as? HomeViewController else {
                     return
                 }
-                self.navigationController?.pushViewController(vc, animated: true)
-                
+                self.navigationController?.pushViewController(viewCon, animated: true)
             } else {
                 let alert = UIAlertController(title: "",
                                               message: "Something was wrong, please try again",
                                               preferredStyle: UIAlertController.Style.alert)
-                
                 alert.addAction(UIAlertAction(title: "Ok",
                                               style: UIAlertAction.Style.default))
                 self.present(alert, animated: true)
             }
         }
     }
-    
     @IBAction func signinClicked(_ sender: Any) {
         signIn()
     }
     @IBAction func forgotPasswordClicked(_ sender: Any) {
     }
     @IBAction func createNewAccountClicked(_ sender: Any) {
-        
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: "RegistrationViewController") as? RegistrationViewController else {
+        guard let viewCon = storyboard?.instantiateViewController(withIdentifier: "RegistrationViewController")
+                as? RegistrationViewController else {
             return
         }
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(viewCon, animated: true)
     }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailField {
             passwordField.becomeFirstResponder()
@@ -74,5 +65,3 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 }
-
-

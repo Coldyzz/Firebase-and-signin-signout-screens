@@ -8,23 +8,18 @@
 import UIKit
 
 class RegistrationViewController: UIViewController, UITextFieldDelegate {
-    
     @IBOutlet weak var whiteView: UIView!
     @IBOutlet weak var emailField: EmailTextField!
     @IBOutlet weak var passwordField: PasswordTextField!
     @IBOutlet weak var errorEmailLabel: UILabel!
     @IBOutlet weak var errorPasswordLabel: UILabel!
-    
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         whiteView.layer.cornerRadius = 16
         emailField.delegate = self
         passwordField.delegate = self
     }
-    
     func signUp() {
         guard let email = emailField.validateEmailTextField(errorLabel: errorEmailLabel) else {
             return
@@ -41,7 +36,6 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                 alert.addAction(UIAlertAction(title: "Ok",
                                               style: UIAlertAction.Style.default))
                 self.present(alert, animated: true)
-                
             } else {
                 self.authenticationService.signUp(email: email, password: password)
                 self.navigationController?.popViewController(animated: true)
@@ -60,5 +54,3 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 }
-
-

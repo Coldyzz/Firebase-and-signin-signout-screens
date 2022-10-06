@@ -8,15 +8,11 @@
 import UIKit
 
 class HomeViewController: UIViewController, UITableViewDataSource {
-    
     @IBOutlet weak var postsTable: UITableView!
-    
     let postsRepository: PostsRepository = DummyPostsRepository()
     var posts: [Post] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         postsTable.dataSource = self
         postsTable.register(UINib(nibName: "PostCell", bundle: nil), forCellReuseIdentifier: "postRow")
         postsRepository.getAll { posts in
@@ -33,6 +29,6 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             fatalError("Cell is not expected type")
         }
         cell.post = posts[indexPath.row]
-        return cell 
+        return cell
     }
 }

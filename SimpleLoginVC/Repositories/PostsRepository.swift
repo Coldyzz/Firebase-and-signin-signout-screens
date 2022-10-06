@@ -7,14 +7,22 @@
 
 import Foundation
 
+struct Post: Codable {
+    let id: String
+    let title: String
+}
+
 protocol PostsRepository {
-    
+    func getAll(completion: ([Post]) -> Void)
 }
 
-class FirebasePostsRepository {
-    
+class FirebasePostsRepository: PostsRepository {
+    func getAll(completion: ([Post]) -> Void) {
+    }
 }
 
-class DummyPostsRepository {
-    
+class DummyPostsRepository: PostsRepository {
+    func getAll(completion: ([Post]) -> Void) {
+        completion([Post(id: "post1", title: "Welcome in the hood"), Post(id: "post2", title: "Get your pizza")])
+    }
 }

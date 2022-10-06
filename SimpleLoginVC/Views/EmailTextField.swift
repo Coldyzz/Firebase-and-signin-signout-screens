@@ -9,17 +9,13 @@ import Foundation
 import UIKit
 
 class EmailTextField: UITextField {
-    
-    override func awakeFromNib() {
+        override func awakeFromNib() {
         super.awakeFromNib()
         layer.borderWidth = 0.5
         layer.cornerRadius = 8
     }
-    
-    
     func validateEmailTextField(errorLabel: UILabel) -> String? {
         let optionalEmail = text
-        
         guard let email = optionalEmail, email.contains("@") else {
             layer.borderColor = UIColor.red.cgColor
             errorLabel.text = "Email is invalid format"

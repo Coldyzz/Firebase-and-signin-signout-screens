@@ -162,13 +162,28 @@
                     <view key="view" contentMode="scaleToFill" id="mMv-aC-49B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="b3f-iE-pIj">
+                                <rect key="frame" x="20.5" y="89.5" width="373" height="717"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="0Ds-8x-O3r"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="b3f-iE-pIj" firstAttribute="width" secondItem="mMv-aC-49B" secondAttribute="width" multiplier="0.9" id="Pyx-Fe-d6b"/>
+                            <constraint firstItem="b3f-iE-pIj" firstAttribute="height" secondItem="mMv-aC-49B" secondAttribute="height" multiplier="0.8" id="UA7-Xs-ZuI"/>
+                            <constraint firstItem="b3f-iE-pIj" firstAttribute="centerY" secondItem="mMv-aC-49B" secondAttribute="centerY" id="iyI-c3-heh"/>
+                            <constraint firstItem="b3f-iE-pIj" firstAttribute="centerX" secondItem="mMv-aC-49B" secondAttribute="centerX" id="tHW-XP-pcb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="postsTable" destination="b3f-iE-pIj" id="EiH-T1-r5F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgp-Q8-Md6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="741" y="89"/>
+            <point key="canvasLocation" x="732" y="80"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="Rlb-7s-S3A">
