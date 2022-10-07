@@ -34,5 +34,6 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     }
     @IBAction func logoutClicked(_ sender: Any) {
         authenticationService.logout()
+        navigationController?.popViewController(animated: true)
     }
 }

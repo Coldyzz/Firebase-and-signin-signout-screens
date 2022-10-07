@@ -168,12 +168,12 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSA-9d-zEk">
-                                <rect key="frame" x="306" y="32" width="100" height="31"/>
+                                <rect key="frame" x="306" y="32" width="100" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="7qP-I5-X5q"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Logout"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="logoutClicked:" destination="Uty-Z3-fa0" eventType="touchUpInside" id="G1Y-zd-kIt"/>
                                 </connections>

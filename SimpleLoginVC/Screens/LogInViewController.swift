@@ -27,20 +27,20 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         guard let password = passwordField.validatePasswordTextField(errorLabel: errorPasswordLabel) else {
             return
         }
-        authenticationService.signIn(email: email, password: password) { wasAuthOk in
-            if wasAuthOk {
+        authenticationService.signIn(email: email, password: password) { errorMessage in
+            if let message = errorMessage {
+                let alert = UIAlertController(title: "",
+                                              message: message,
+                                              preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok",
+                                              style: UIAlertAction.Style.default))
+                self.present(alert, animated: true)
+            } else {
                 guard let viewCon = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController")
                         as? HomeViewController else {
                     return
                 }
                 self.navigationController?.pushViewController(viewCon, animated: true)
-            } else {
-                let alert = UIAlertController(title: "",
-                                              message: "Something was wrong, please try again",
-                                              preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "Ok",
-                                              style: UIAlertAction.Style.default))
-                self.present(alert, animated: true)
             }
         }
     }

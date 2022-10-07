@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF58D68628EF540A00E24CD4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EF58D68528EF540A00E24CD4 /* FirebaseFirestore */; };
+		EF58D68828EF540A00E24CD4 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = EF58D68728EF540A00E24CD4 /* FirebaseFirestoreCombine-Community */; };
+		EF58D68A28EF540A00E24CD4 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EF58D68928EF540A00E24CD4 /* FirebaseFirestoreSwift */; };
 		EF776BF928E747CE0016CB5E /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF776BF828E747CE0016CB5E /* EmailTextField.swift */; };
 		EF776BFB28E74BBE0016CB5E /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF776BFA28E74BBE0016CB5E /* PasswordTextField.swift */; };
 		EF776BFD28EC8B320016CB5E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF776BFC28EC8B320016CB5E /* HomeViewController.swift */; };
@@ -51,8 +54,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF58D68A28EF540A00E24CD4 /* FirebaseFirestoreSwift in Frameworks */,
 				EF81A01428E212640029516D /* FirebaseAnalytics in Frameworks */,
+				EF58D68828EF540A00E24CD4 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				EF81A01628E212640029516D /* FirebaseAuth in Frameworks */,
+				EF58D68628EF540A00E24CD4 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +164,9 @@
 			packageProductDependencies = (
 				EF81A01328E212640029516D /* FirebaseAnalytics */,
 				EF81A01528E212640029516D /* FirebaseAuth */,
+				EF58D68528EF540A00E24CD4 /* FirebaseFirestore */,
+				EF58D68728EF540A00E24CD4 /* FirebaseFirestoreCombine-Community */,
+				EF58D68928EF540A00E24CD4 /* FirebaseFirestoreSwift */,
 			);
 			productName = SimpleLoginVC;
 			productReference = EF8B60D928DDE9D1003F906E /* SimpleLoginVC.app */;
@@ -189,6 +198,7 @@
 			mainGroup = EF8B60D028DDE9D1003F906E;
 			packageReferences = (
 				EF81A01228E212640029516D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				EF58D68428EF540A00E24CD4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = EF8B60DA28DDE9D1003F906E /* Products */;
 			projectDirPath = "";
@@ -469,6 +479,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		EF58D68428EF540A00E24CD4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		EF81A01228E212640029516D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -480,6 +498,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		EF58D68528EF540A00E24CD4 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF81A01228E212640029516D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		EF58D68728EF540A00E24CD4 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF81A01228E212640029516D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		EF58D68928EF540A00E24CD4 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF81A01228E212640029516D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
 		EF81A01328E212640029516D /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EF81A01228E212640029516D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

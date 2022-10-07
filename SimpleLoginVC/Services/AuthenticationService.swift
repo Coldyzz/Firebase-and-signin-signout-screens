@@ -7,35 +7,39 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseFirestoreSwift
 
 protocol AuthenticationService {
-    func signIn(email: String, password: String, completion: @escaping (Bool) -> Void)
-    func signUp(email: String, password: String, completion: @escaping (Bool) -> Void)
+    func signIn(email: String, password: String, completion: @escaping (String?) -> Void)
+    func signUp(email: String, password: String, completion: @escaping (String?) -> Void)
     func logout()
     func isAuthenticated () -> Bool
 }
 
 class FirebaseAuthenticationService: AuthenticationService {
 
-    func signIn(email: String, password: String, completion: @escaping (Bool) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: password) { result, _ in
+    func signIn(email: String, password: String, completion: @escaping (String?) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if result?.user != nil {
                 UserDefaults.standard.set(true, forKey: "USER_OK")
-                completion(true)
+                completion(nil)
             } else {
-                completion(false)
+                let massage = error?.localizedDescription
+                completion(massage)
             }
         }
     }
-    func signUp(email: String, password: String, completion: @escaping (Bool) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { result, _ in
+    func signUp(email: String, password: String, completion: @escaping (String?) -> Void) {
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if result?.user != nil {
                 UserDefaults.standard.set(true, forKey: "USER_OK")
-                completion(true)
+                completion(nil)
             } else {
-                completion(false)
+                let massage = error?.localizedDescription
+                completion(massage)
             }
-        }    }
+        }
+    }
     func logout() {
         try? Auth.auth().signOut()
     }
