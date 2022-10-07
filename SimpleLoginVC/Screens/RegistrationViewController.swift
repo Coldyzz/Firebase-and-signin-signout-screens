@@ -37,11 +37,11 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                                               style: UIAlertAction.Style.default))
                 self.present(alert, animated: true)
             } else {
-                guard let viewCon = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController")
+                guard let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController")
                         as? HomeViewController else {
                     return
                 }
-                self.navigationController?.pushViewController(viewCon, animated: true)
+                self.navigationController?.pushViewController(homeVC, animated: true)
             }
         }
     }
