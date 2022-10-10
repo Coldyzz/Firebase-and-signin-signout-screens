@@ -30,6 +30,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     }
     @objc func logOutExit() {
         authenticationService.logout()
+        navigationController?.popViewController(animated: true)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
@@ -42,9 +43,5 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         }
         cell.post = posts[indexPath.row]
         return cell
-    }
-    @IBAction func logoutClicked(_ sender: Any) {
-        authenticationService.logout()
-        navigationController?.popViewController(animated: true)
     }
 }

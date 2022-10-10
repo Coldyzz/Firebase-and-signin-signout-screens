@@ -158,7 +158,7 @@
         <!--Home View Controller-->
         <scene sceneID="8Us-qu-bc5">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="Uty-Z3-fa0" customClass="HomeViewController" customModule="SimpleLoginVC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeViewController" id="Uty-Z3-fa0" customClass="HomeViewController" customModule="SimpleLoginVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mMv-aC-49B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

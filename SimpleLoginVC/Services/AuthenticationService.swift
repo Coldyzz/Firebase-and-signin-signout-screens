@@ -12,12 +12,11 @@ import FirebaseFirestoreSwift
 protocol AuthenticationService {
     func signIn(email: String, password: String, completion: @escaping (String?) -> Void)
     func signUp(email: String, password: String, completion: @escaping (String?) -> Void)
-    func logout()
-    func isAuthenticated () -> Bool
+    func logout() -> Bool
+    func isAuthenticated() -> Bool
 }
 
 class FirebaseAuthenticationService: AuthenticationService {
-
     func signIn(email: String, password: String, completion: @escaping (String?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if result?.user != nil {
@@ -40,16 +39,21 @@ class FirebaseAuthenticationService: AuthenticationService {
             }
         }
     }
-    func logout() {
-        try? Auth.auth().signOut()
+    func logout() -> Bool {
+        do {
+            try Auth.auth().signOut()
+            return true
+        } catch {
+            return false
+        }
     }
     func isAuthenticated() -> Bool {
         let hasUser = UserDefaults.standard.bool(forKey: "USER_OK")
         return hasUser
     }
     func forgotPassword() {
-       // Auth.auth().sendPasswordReset(withEmail: email) { <#Error?#> in
-       //     <#code#>
-       // }
+        // Auth.auth().sendPasswordReset(withEmail: email) { <#Error?#> in
+        //     <#code#>
+        // }
     }
 }
