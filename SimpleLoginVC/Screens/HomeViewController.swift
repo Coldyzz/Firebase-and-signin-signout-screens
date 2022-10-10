@@ -14,6 +14,13 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Posts"
+        navigationItem.setHidesBackButton(true, animated: false)
+        navigationController?.isToolbarHidden = false
+        toolbarItems = [UIBarButtonItem(title: "Log Out",
+                                        style: UIBarButtonItem.Style.plain,
+                                        target: self,
+                                        action: #selector(logOutExit))]
         postsTable.dataSource = self
         postsTable.register(UINib(nibName: "PostCell", bundle: nil), forCellReuseIdentifier: "postRow")
         postsRepository.getAll { posts in
@@ -21,10 +28,14 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             postsTable.reloadData()
         }
     }
+    @objc func logOutExit() {
+        authenticationService.logout()
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "postRow",
                                                        for: indexPath) as? PostCell else {
             fatalError("Cell is not expected type")

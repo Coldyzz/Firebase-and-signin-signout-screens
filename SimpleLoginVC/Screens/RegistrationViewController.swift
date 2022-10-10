@@ -14,7 +14,6 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var errorEmailLabel: UILabel!
     @IBOutlet weak var errorPasswordLabel: UILabel!
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         whiteView.layer.cornerRadius = 16
