@@ -9,14 +9,15 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
-    
     var window: UIWindow?
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession,
+               options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
         if authenticationService.isAuthenticated() {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let homeVC = storyboard.instantiateViewController(withIdentifier: "homeViewController")
-            window?.rootViewController = homeVC
+            let navigationVC = UINavigationController(rootViewController: homeVC)
+            window?.rootViewController = navigationVC
             window?.makeKeyAndVisible()
         }
     }

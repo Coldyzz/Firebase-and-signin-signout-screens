@@ -17,10 +17,14 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         title = "Posts"
         navigationItem.setHidesBackButton(true, animated: false)
         navigationController?.isToolbarHidden = false
-        toolbarItems = [UIBarButtonItem(title: "Log Out",
-                                        style: UIBarButtonItem.Style.plain,
-                                        target: self,
-                                        action: #selector(logOutExit))]
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(title: "Log Out",
+                                                              style: UIBarButtonItem.Style.plain,
+                                                              target: self,
+                                                              action: #selector(logoutClicked)),
+                                              UIBarButtonItem(title: "Create",
+                                                              style: UIBarButtonItem.Style.plain,
+                                                              target: self,
+                                                              action: nil)]
         postsTable.dataSource = self
         postsTable.register(UINib(nibName: "PostCell", bundle: nil), forCellReuseIdentifier: "postRow")
         postsRepository.getAll { posts in
@@ -28,9 +32,11 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             postsTable.reloadData()
         }
     }
-    @objc func logOutExit() {
+    @objc func logoutClicked() {
         authenticationService.logout()
         navigationController?.popViewController(animated: true)
+    }
+    @objc func createClicked() {
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count

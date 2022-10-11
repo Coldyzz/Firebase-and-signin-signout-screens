@@ -52,7 +52,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             return
         }
         authenticationService.forgotPassword(email: email) { error in
-            //показать алерт с ошибкой, если нет ошибки вернуться на предыдущий экран
+        //показать алерт с ошибкой, если нет ошибки вернуться на предыдущий экран
         }
     }
     @IBAction func createNewAccountClicked(_ sender: Any) {
