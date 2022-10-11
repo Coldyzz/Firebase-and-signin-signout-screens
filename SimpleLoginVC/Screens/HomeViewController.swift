@@ -34,6 +34,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     }
     @objc func logoutClicked() {
         authenticationService.logout()
+        // теперь делем проверку для навигейшена сколько экранов в списке
         if navigationController?.viewControllers.count == 1 {
             guard let loginVC = storyboard?.instantiateViewController(withIdentifier: "logInViewController") else {
                 return
@@ -44,6 +45,8 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         }
     }
     @objc func createClicked() {
+        let newPostController = NewPostViewController()
+        navigationController?.pushViewController(newPostController, animated: true)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count

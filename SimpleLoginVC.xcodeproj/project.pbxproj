@@ -10,6 +10,7 @@
 		EF58D68628EF540A00E24CD4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EF58D68528EF540A00E24CD4 /* FirebaseFirestore */; };
 		EF58D68828EF540A00E24CD4 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = EF58D68728EF540A00E24CD4 /* FirebaseFirestoreCombine-Community */; };
 		EF58D68A28EF540A00E24CD4 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EF58D68928EF540A00E24CD4 /* FirebaseFirestoreSwift */; };
+		EF58D68C28F5CDB100E24CD4 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF58D68B28F5CDB100E24CD4 /* NewPostViewController.swift */; };
 		EF776BF928E747CE0016CB5E /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF776BF828E747CE0016CB5E /* EmailTextField.swift */; };
 		EF776BFB28E74BBE0016CB5E /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF776BFA28E74BBE0016CB5E /* PasswordTextField.swift */; };
 		EF776BFD28EC8B320016CB5E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF776BFC28EC8B320016CB5E /* HomeViewController.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF58D68B28F5CDB100E24CD4 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		EF776BF828E747CE0016CB5E /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
 		EF776BFA28E74BBE0016CB5E /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		EF776BFC28EC8B320016CB5E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				EF8B60E028DDE9D1003F906E /* LogInViewController.swift */,
 				EF81A01728E34A2B0029516D /* RegistrationViewController.swift */,
 				EF776BFC28EC8B320016CB5E /* HomeViewController.swift */,
+				EF58D68B28F5CDB100E24CD4 /* NewPostViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF58D68C28F5CDB100E24CD4 /* NewPostViewController.swift in Sources */,
 				EF8B60E128DDE9D1003F906E /* LogInViewController.swift in Sources */,
 				EF8B60DD28DDE9D1003F906E /* AppDelegate.swift in Sources */,
 				EF776BFB28E74BBE0016CB5E /* PasswordTextField.swift in Sources */,
