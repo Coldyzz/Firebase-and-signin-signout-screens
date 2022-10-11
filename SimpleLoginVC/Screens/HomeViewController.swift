@@ -15,7 +15,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Posts"
-        navigationItem.setHidesBackButton(true, animated: false)
+        navigationItem.hidesBackButton = true
         navigationController?.isToolbarHidden = false
         navigationItem.rightBarButtonItems = [UIBarButtonItem(title: "Log Out",
                                                               style: UIBarButtonItem.Style.plain,
@@ -24,7 +24,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
                                               UIBarButtonItem(title: "Create",
                                                               style: UIBarButtonItem.Style.plain,
                                                               target: self,
-                                                              action: nil)]
+                                                              action: #selector(createClicked))]
         postsTable.dataSource = self
         postsTable.register(UINib(nibName: "PostCell", bundle: nil), forCellReuseIdentifier: "postRow")
         postsRepository.getAll { posts in
@@ -34,7 +34,14 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     }
     @objc func logoutClicked() {
         authenticationService.logout()
-        navigationController?.popViewController(animated: true)
+        if navigationController?.viewControllers.count == 1 {
+            guard let loginVC = storyboard?.instantiateViewController(withIdentifier: "logInViewController") else {
+                return
+            }
+            navigationController?.pushViewController(loginVC, animated: true)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
     }
     @objc func createClicked() {
     }

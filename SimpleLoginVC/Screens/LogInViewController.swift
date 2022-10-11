@@ -36,7 +36,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                                               style: UIAlertAction.Style.default))
                 self.present(alert, animated: true)
             } else {
-                guard let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController")
+                guard let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "homeViewController")
                         as? HomeViewController else {
                     return
                 }
