@@ -7,9 +7,10 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 struct Post: Codable {
-    let id: String
+    //let id: String
     let title: String
 }
 
@@ -19,19 +20,22 @@ protocol PostsRepository {
 
 class FirebasePostsRepository: PostsRepository {
     func getAll(completion: @escaping ([Post]) -> Void) {
-        Firestore.firestore().collection("posts").getDocuments { snapshot, error in
+        Firestore.firestore().collection("posts").getDocuments { snapshot, _ in
             guard let docs = snapshot?.documents else {
                 completion([])
                 return
             }
             var posts: [Post] = []
             for doc in docs {
-                let id = doc.documentID
-                let data = doc.data()
-                guard let title = data["title"] as? String else {
+                guard let post = try? doc.data(as: Post.self) else {
                     continue
                 }
-                let post = Post(id: id, title: title)
+                /*let id = doc.documentID
+                 let data = doc.data()
+                 guard let title = data["title"] as? String else {
+                 continue
+                 }
+                 let post = Post(id: id, title: title) */
                 posts.append(post)
             }
             completion(posts)
@@ -39,8 +43,8 @@ class FirebasePostsRepository: PostsRepository {
     }
 }
 
-class DummyPostsRepository: PostsRepository {
+/*class DummyPostsRepository: PostsRepository {
     func getAll(completion: ([Post]) -> Void) {
         completion([Post(id: "post1", title: "Welcome in the hood"), Post(id: "post2", title: "Get your pizza")])
     }
-}
+}*/
