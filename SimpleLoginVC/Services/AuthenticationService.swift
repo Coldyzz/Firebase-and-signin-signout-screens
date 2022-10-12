@@ -7,7 +7,6 @@
 
 import Foundation
 import FirebaseAuth
-import FirebaseFirestoreSwift
 
 protocol AuthenticationService {
     func signIn(email: String, password: String, completion: @escaping (String?) -> Void)

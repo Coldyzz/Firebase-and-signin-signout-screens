@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var postsTable: UITableView!
-    let postsRepository: PostsRepository = DummyPostsRepository()
+    let postsRepository: PostsRepository = FirebasePostsRepository()
     var posts: [Post] = []
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
     override func viewDidLoad() {
@@ -29,7 +29,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         postsTable.register(UINib(nibName: "PostCell", bundle: nil), forCellReuseIdentifier: "postRow")
         postsRepository.getAll { posts in
             self.posts = posts
-            postsTable.reloadData()
+            self.postsTable.reloadData()
         }
     }
     @objc func logoutClicked() {
