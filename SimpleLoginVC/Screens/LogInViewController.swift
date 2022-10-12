@@ -48,12 +48,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         signIn()
     }
     @IBAction func forgotPasswordClicked(_ sender: Any) {
-        guard let email = emailField.text else {
-            return
-        }
-        authenticationService.forgotPassword(email: email) { error in
-        //показать алерт с ошибкой, если нет ошибки вернуться на предыдущий экран
-        }
+        let resetPassVC = ResetPasswordViewController()
+        navigationController?.pushViewController(resetPassVC, animated: true)
     }
     @IBAction func createNewAccountClicked(_ sender: Any) {
         guard let viewCon = storyboard?.instantiateViewController(withIdentifier: "RegistrationViewController")

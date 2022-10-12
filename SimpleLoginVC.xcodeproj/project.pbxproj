@@ -11,6 +11,7 @@
 		EF58D68828EF540A00E24CD4 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = EF58D68728EF540A00E24CD4 /* FirebaseFirestoreCombine-Community */; };
 		EF58D68A28EF540A00E24CD4 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EF58D68928EF540A00E24CD4 /* FirebaseFirestoreSwift */; };
 		EF58D68C28F5CDB100E24CD4 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF58D68B28F5CDB100E24CD4 /* NewPostViewController.swift */; };
+		EF76FCA228F7134E00314932 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF76FCA128F7134D00314932 /* ResetPasswordViewController.swift */; };
 		EF776BF928E747CE0016CB5E /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF776BF828E747CE0016CB5E /* EmailTextField.swift */; };
 		EF776BFB28E74BBE0016CB5E /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF776BFA28E74BBE0016CB5E /* PasswordTextField.swift */; };
 		EF776BFD28EC8B320016CB5E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF776BFC28EC8B320016CB5E /* HomeViewController.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		EF58D68B28F5CDB100E24CD4 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		EF76FCA128F7134D00314932 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		EF776BF828E747CE0016CB5E /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
 		EF776BFA28E74BBE0016CB5E /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		EF776BFC28EC8B320016CB5E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				EF81A01728E34A2B0029516D /* RegistrationViewController.swift */,
 				EF776BFC28EC8B320016CB5E /* HomeViewController.swift */,
 				EF58D68B28F5CDB100E24CD4 /* NewPostViewController.swift */,
+				EF76FCA128F7134D00314932 /* ResetPasswordViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				EF58D68C28F5CDB100E24CD4 /* NewPostViewController.swift in Sources */,
 				EF8B60E128DDE9D1003F906E /* LogInViewController.swift in Sources */,
 				EF8B60DD28DDE9D1003F906E /* AppDelegate.swift in Sources */,
+				EF76FCA228F7134E00314932 /* ResetPasswordViewController.swift in Sources */,
 				EF776BFB28E74BBE0016CB5E /* PasswordTextField.swift in Sources */,
 				EF776BFD28EC8B320016CB5E /* HomeViewController.swift in Sources */,
 				EF776BF928E747CE0016CB5E /* EmailTextField.swift in Sources */,
@@ -416,6 +420,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -427,7 +432,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -444,6 +449,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -455,7 +461,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
