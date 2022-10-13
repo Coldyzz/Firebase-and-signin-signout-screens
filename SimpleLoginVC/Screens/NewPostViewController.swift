@@ -8,6 +8,8 @@
 import UIKit
 
 class NewPostViewController: UIViewController {
+    var onCreateCompletion: ((Post?) -> Void)?
+    let postsRepository: PostsRepository = FirebasePostsRepository()
     lazy var  titleField: UITextField = {
         let field = UITextField(frame: CGRect(x: 16,
                                               y: 100,
@@ -20,7 +22,6 @@ class NewPostViewController: UIViewController {
         field.layer.borderColor = UIColor.secondaryLabel.cgColor
         return field
     }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -28,10 +29,20 @@ class NewPostViewController: UIViewController {
         view.addSubview(titleField)
         let createButton = UIButton(type: .system)
         createButton.frame = CGRect(x: 8,
-                                    y: 250,
+                                    y: 175,
                                     width: 100,
                                     height: 48)
         createButton.setTitle("Create", for: .normal)
+        createButton.addTarget(self, action: #selector(onCreateClicked), for: .touchUpInside)
         view.addSubview(createButton)
+    }
+    @objc func onCreateClicked() {
+        guard let title = titleField.text, title.count > 3 else {
+            return
+        }
+        postsRepository.create(value: Post(title: title)) { [weak self] newPost in
+            self?.onCreateCompletion?(newPost)
+            self?.navigationController?.popViewController(animated: true)
+        }
     }
 }

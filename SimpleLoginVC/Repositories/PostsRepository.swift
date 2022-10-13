@@ -21,9 +21,7 @@ protocol PostsRepository {
 
 class FirebasePostsRepository: PostsRepository {
     func create(value: Post, completion: @escaping (Post?) -> Void) {
-        var postData: [String:Any] = [:]
-        postData["Title"] = value.title
-        Firestore.firestore().collection("posts").addDocument(data: postData) { error in
+        try? Firestore.firestore().collection("posts").addDocument(from: value) {error in
             if error == nil {
                 completion(Post(title: value.title))
             } else {
@@ -31,7 +29,6 @@ class FirebasePostsRepository: PostsRepository {
             }
         }
     }
-    
     func getAll(completion: @escaping ([Post]) -> Void) {
         Firestore.firestore().collection("posts").getDocuments { snapshot, _ in
             guard let docs = snapshot?.documents else {

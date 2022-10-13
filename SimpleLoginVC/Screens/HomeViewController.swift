@@ -27,10 +27,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
                                                               action: #selector(createClicked))]
         postsTable.dataSource = self
         postsTable.register(UINib(nibName: "PostCell", bundle: nil), forCellReuseIdentifier: "postRow")
-        postsRepository.getAll { posts in
-            self.posts = posts
-            self.postsTable.reloadData()
-        }
+        reloadPosts()
     }
     @objc func logoutClicked() {
         authenticationService.logout()
@@ -46,6 +43,14 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     }
     @objc func createClicked() {
         let newPostController = NewPostViewController()
+        newPostController.onCreateCompletion = { newPost in
+            //перезагружаем все посты
+            //self?.reloadPosts()
+            if let post = newPost {
+                self.posts.append(post)
+                self.postsTable.reloadData()
+            }
+        }
         navigationController?.pushViewController(newPostController, animated: true)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,5 +64,11 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         }
         cell.post = posts[indexPath.row]
         return cell
+    }
+    func reloadPosts() {
+        postsRepository.getAll { posts in
+            self.posts = posts
+            self.postsTable.reloadData()
+        }
     }
 }
