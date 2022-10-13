@@ -40,7 +40,7 @@ class NewPostViewController: UIViewController {
         guard let title = titleField.text, title.count > 3 else {
             return
         }
-        postsRepository.create(value: Post(title: title)) { [weak self] newPost in
+        postsRepository.create(value: Post(title: title, created: Date.now)) { [weak self] newPost in
             self?.onCreateCompletion?(newPost)
             self?.navigationController?.popViewController(animated: true)
         }

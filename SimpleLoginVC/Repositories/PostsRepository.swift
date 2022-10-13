@@ -12,6 +12,7 @@ import FirebaseFirestoreSwift
 struct Post: Codable {
     //let id: String
     let title: String
+    let created: Date
 }
 
 protocol PostsRepository {
@@ -23,7 +24,7 @@ class FirebasePostsRepository: PostsRepository {
     func create(value: Post, completion: @escaping (Post?) -> Void) {
         try? Firestore.firestore().collection("posts").addDocument(from: value) {error in
             if error == nil {
-                completion(Post(title: value.title))
+                completion(Post(title: value.title), created: value.created)
             } else {
                 completion(nil)
             }
