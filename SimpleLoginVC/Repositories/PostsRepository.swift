@@ -16,9 +16,22 @@ struct Post: Codable {
 
 protocol PostsRepository {
     func getAll(completion: @escaping ([Post]) -> Void)
+    func create(value: Post, completion: @escaping (Post?) -> Void)
 }
 
 class FirebasePostsRepository: PostsRepository {
+    func create(value: Post, completion: @escaping (Post?) -> Void) {
+        var postData: [String:Any] = [:]
+        postData["Title"] = value.title
+        Firestore.firestore().collection("posts").addDocument(data: postData) { error in
+            if error == nil {
+                completion(Post(title: value.title))
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
     func getAll(completion: @escaping ([Post]) -> Void) {
         Firestore.firestore().collection("posts").getDocuments { snapshot, _ in
             guard let docs = snapshot?.documents else {
@@ -30,6 +43,7 @@ class FirebasePostsRepository: PostsRepository {
                 guard let post = try? doc.data(as: Post.self) else {
                     continue
                 }
+                // пример без использования firestoreswift
                 /*let id = doc.documentID
                  let data = doc.data()
                  guard let title = data["title"] as? String else {
@@ -42,7 +56,7 @@ class FirebasePostsRepository: PostsRepository {
         }
     }
 }
-
+// пример заглушки
 /*class DummyPostsRepository: PostsRepository {
     func getAll(completion: ([Post]) -> Void) {
         completion([Post(id: "post1", title: "Welcome in the hood"), Post(id: "post2", title: "Get your pizza")])

@@ -20,24 +20,12 @@ class NewPostViewController: UIViewController {
         field.layer.borderColor = UIColor.secondaryLabel.cgColor
         return field
     }()
-    lazy var bodyField: UITextField = {
-        let field = UITextField(frame: CGRect(x: 16,
-                                              y: 150,
-                                              width: 200,
-                                              height: 48))
-        field.placeholder = "Please Type Title..."
-        field.backgroundColor = .secondarySystemBackground
-        field.layer.cornerRadius = 8.0
-        field.layer.borderWidth = 1.0
-        field.layer.borderColor = UIColor.secondaryLabel.cgColor
-        return field
-    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = "Create New Post"
         view.addSubview(titleField)
-        view.addSubview(bodyField)
         let createButton = UIButton(type: .system)
         createButton.frame = CGRect(x: 8,
                                     y: 250,
