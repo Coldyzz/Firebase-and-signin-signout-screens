@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var postsTable: UITableView!
     let postsRepository: PostsRepository = FirebasePostsRepository()
     var posts: [Post] = []
@@ -26,6 +26,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
                                                               target: self,
                                                               action: #selector(createClicked))]
         postsTable.dataSource = self
+        postsTable.delegate = self
         postsTable.register(UINib(nibName: "PostCell", bundle: nil), forCellReuseIdentifier: "postRow")
         reloadPosts()
     }
@@ -70,5 +71,11 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             self.posts = posts
             self.postsTable.reloadData()
         }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let index = indexPath.row
+        let post = posts[index]
+        let updatePostController = NewPostViewController()
+        navigationController?.pushViewController(updatePostController, animated: true)
     }
 }

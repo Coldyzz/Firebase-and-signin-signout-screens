@@ -7,8 +7,13 @@
 
 import UIKit
 
+enum NewPostMode {
+    case create, edit
+}
+
 class NewPostViewController: UIViewController {
     var onCreateCompletion: ((Post?) -> Void)?
+    var editPost: Post?
     let postsRepository: PostsRepository = FirebasePostsRepository()
     lazy var  titleField: UITextField = {
         let field = UITextField(frame: CGRect(x: 16,

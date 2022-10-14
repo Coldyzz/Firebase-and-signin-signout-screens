@@ -18,13 +18,26 @@ struct Post: Codable {
 protocol PostsRepository {
     func getAll(completion: @escaping ([Post]) -> Void)
     func create(value: Post, completion: @escaping (Post?) -> Void)
+    func update(value: Post, completion: @escaping (Post?) -> Void)
 }
 
 class FirebasePostsRepository: PostsRepository {
+    func update(value: Post, completion: @escaping (Post?) -> Void) {
+        try? Firestore.firestore()
+            .collection("posts")
+            .document("lv8EBOArvAHNffPujyC0")
+            .setData(from: value) {error in
+                if error == nil {
+                    completion(Post(title: value.title, created: value.created))
+                } else {
+                    completion(nil)
+                }
+            }
+    }
     func create(value: Post, completion: @escaping (Post?) -> Void) {
         try? Firestore.firestore().collection("posts").addDocument(from: value) {error in
             if error == nil {
-                completion(Post(title: value.title), created: value.created)
+                completion(Post(title: value.title, created: value.created))
             } else {
                 completion(nil)
             }
