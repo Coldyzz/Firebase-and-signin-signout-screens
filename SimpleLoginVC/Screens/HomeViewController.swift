@@ -74,8 +74,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
-        let post = posts[index]
+        let postToUpdate = posts[index]
         let updatePostController = NewPostViewController()
+        updatePostController.editPost = postToUpdate
+        updatePostController.mode = NewPostMode.edit
+        updatePostController.onUpdateCompletion = { updatedPost in
+            if let post = updatedPost {
+                self.posts[index] = post
+                self.postsTable.reloadData()
+            }
+        }
         navigationController?.pushViewController(updatePostController, animated: true)
     }
 }
