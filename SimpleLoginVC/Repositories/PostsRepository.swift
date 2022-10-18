@@ -21,13 +21,12 @@ protocol PostsRepository {
     func update(value: Post, completion: @escaping (Post?) -> Void)
     func delete(value: Post, completion: @escaping (Post?) -> Void)
 }
-//CRUD (Create Read Update Delete)
+// CRUD (Create Read Update Delete)
 class FirebasePostsRepository: PostsRepository {
     // можно сократить пару строк
     /*lazy var postsCollection: CollectionReference = {
      return Firestore.firestore().collection("posts")
      }()*/
-    
     func delete(value: Post, completion: @escaping (Post?) -> Void) {
         guard let documentID = value.id else {
             completion(nil)
@@ -74,7 +73,7 @@ class FirebasePostsRepository: PostsRepository {
                         created: value.created))
         
         // пример для работы с другими серверами
-        /*try? Firestore.firestore().collection("posts").addDocument(from: value) {error in
+        /* try? Firestore.firestore().collection("posts").addDocument(from: value) {error in
          if error == nil {
          completion(Post(id: value.id,
          title: value.title,
@@ -82,7 +81,7 @@ class FirebasePostsRepository: PostsRepository {
          } else {
          completion(nil)
          }
-         }*/
+         } */
     }
     func getAll(completion: @escaping ([Post]) -> Void) {
         Firestore.firestore()

@@ -14,12 +14,16 @@ class PostCell: UITableViewCell {
             titleLabel.text = post.title
         }
     }
-
+    var onDeleteCompletion: ((Post) -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    @IBAction func deleteClicked(_ sender: Any) {
+        onDeleteCompletion?(post)
     }
 }

@@ -45,8 +45,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @objc func createClicked() {
         let newPostController = NewPostViewController()
         newPostController.onCreateCompletion = { newPost in
-            //перезагружаем все посты
-            //self?.reloadPosts()
+            // перезагружаем все посты
+            // self?.reloadPosts()
             if let post = newPost {
                 self.posts.append(post)
                 self.postsTable.reloadData()
@@ -64,6 +64,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             fatalError("Cell is not expected type")
         }
         cell.post = posts[indexPath.row]
+        cell.onDeleteCompletion = { postToDelete in
+            self.postsRepository.delete(value: postToDelete) { deletedPost in
+                self.posts.remove(at: indexPath.row)
+                self.postsTable.reloadData() 
+            }
+        }
         return cell
     }
     func reloadPosts() {
