@@ -31,19 +31,19 @@ class NewPostViewController: UIViewController {
         return field
     }()
     lazy var createButton: UIButton = {
-        let createButton = UIButton(type: .system)
-        createButton.frame = CGRect(x: 8,
+        let button = UIButton(type: .system)
+        button.frame = CGRect(x: 8,
                                     y: 175,
                                     width: 160,
                                     height: 48)
         if mode == NewPostMode.create {
-            createButton.setTitle("Create", for: .normal)
-            createButton.addTarget(self, action: #selector(onCreateClicked), for: .touchUpInside)
+            button.setTitle("Create", for: .normal)
+            button.addTarget(self, action: #selector(onCreateClicked), for: .touchUpInside)
         } else {
-            createButton.setTitle("Update", for: .normal)
-            createButton.addTarget(self, action: #selector(onUpdateClicked), for: .touchUpInside)
+            button.setTitle("Update", for: .normal)
+            button.addTarget(self, action: #selector(onUpdateClicked), for: .touchUpInside)
         }
-        return createButton
+        return button
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +57,7 @@ class NewPostViewController: UIViewController {
         titleField.text = editPost?.title
         view.addSubview(createButton)
         titleField.widthAnchor.constraint(equalTo: view.widthAnchor,
-                                          multiplier: 0.8).isActive = true
+                                          multiplier: 0.9).isActive = true
         titleField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         titleField.heightAnchor.constraint(equalToConstant: 48).isActive = true
         titleField.topAnchor.constraint(equalTo: view.topAnchor,
