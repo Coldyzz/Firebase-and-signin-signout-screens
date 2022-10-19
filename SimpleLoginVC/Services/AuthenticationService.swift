@@ -48,7 +48,9 @@ class FirebaseAuthenticationService: AuthenticationService {
         }
     }
     func isAuthenticated() -> Bool {
-        let hasUser = UserDefaults.standard.bool(forKey: "USER_OK")
+        /* let hasUser = UserDefaults.standard.bool(forKey: "USER_OK")
+         return hasUser */
+        let hasUser = Auth.auth().currentUser != nil
         return hasUser
     }
     func forgotPassword(email: String, completion: @escaping (String?) -> Void) {

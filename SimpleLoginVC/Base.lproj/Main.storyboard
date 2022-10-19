@@ -101,7 +101,6 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="createNewAccountClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cea-LN-n9r"/>
-                                            <action selector="forgotPasswordClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GJW-e4-b97"/>
                                         </connections>
                                     </button>
                                 </subviews>
