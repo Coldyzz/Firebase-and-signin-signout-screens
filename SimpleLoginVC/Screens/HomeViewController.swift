@@ -67,7 +67,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.onDeleteCompletion = { postToDelete in
             self.postsRepository.delete(value: postToDelete) { deletedPost in
                 self.posts.remove(at: indexPath.row)
-                self.postsTable.reloadData() 
+                self.postsTable.reloadData()
             }
         }
         return cell

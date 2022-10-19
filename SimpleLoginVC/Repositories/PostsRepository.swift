@@ -71,7 +71,6 @@ class FirebasePostsRepository: PostsRepository {
         completion(Post(id: reference.documentID,
                         title: value.title,
                         created: value.created))
-        
         // пример для работы с другими серверами
         /* try? Firestore.firestore().collection("posts").addDocument(from: value) {error in
          if error == nil {

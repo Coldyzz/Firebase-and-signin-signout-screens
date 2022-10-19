@@ -13,6 +13,7 @@ class EmailTextField: UITextField {
         super.awakeFromNib()
         layer.borderWidth = 0.5
         layer.cornerRadius = 8
+        autocapitalizationType = .none
     }
     func validateEmailTextField(errorLabel: UILabel) -> String? {
         let optionalEmail = text
