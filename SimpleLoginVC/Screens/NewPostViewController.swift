@@ -23,7 +23,7 @@ class NewPostViewController: UIViewController {
                                               width: 200,
                                               height: 48))
         field.placeholder = "Please Type Title..."
-        // field.backgroundColor = .secondarySystemBackground
+        field.backgroundColor = .systemBackground
         field.layer.cornerRadius = 8.0
         field.layer.borderWidth = 1.0
         field.layer.borderColor = UIColor.secondaryLabel.cgColor
@@ -33,9 +33,9 @@ class NewPostViewController: UIViewController {
     lazy var createButton: UIButton = {
         let button = UIButton(type: .system)
         button.frame = CGRect(x: 8,
-                                    y: 175,
-                                    width: 160,
-                                    height: 48)
+                              y: 175,
+                              width: 160,
+                              height: 48)
         if mode == NewPostMode.create {
             button.setTitle("Create", for: .normal)
             button.addTarget(self, action: #selector(onCreateClicked), for: .touchUpInside)
@@ -45,6 +45,13 @@ class NewPostViewController: UIViewController {
         }
         return button
     }()
+    lazy var backgroundContainer: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 16
+        view.backgroundColor = .systemCyan
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -53,19 +60,25 @@ class NewPostViewController: UIViewController {
         } else {
             title = "Update Post"
         }
-        view.addSubview(titleField)
-        titleField.text = editPost?.title
-        view.addSubview(createButton)
-        titleField.widthAnchor.constraint(equalTo: view.widthAnchor,
+        view.addSubview(backgroundContainer)
+        backgroundContainer.addSubview(titleField)
+        backgroundContainer.addSubview(createButton)
+        backgroundContainer.widthAnchor.constraint(equalTo: view.widthAnchor,
+                                                   multiplier: 0.95).isActive = true
+        backgroundContainer.heightAnchor.constraint(equalTo: backgroundContainer.widthAnchor).isActive = true
+        backgroundContainer.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        backgroundContainer.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        titleField.widthAnchor.constraint(equalTo: backgroundContainer.widthAnchor,
                                           multiplier: 0.9).isActive = true
-        titleField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        titleField.centerXAnchor.constraint(equalTo: backgroundContainer.centerXAnchor).isActive = true
         titleField.heightAnchor.constraint(equalToConstant: 48).isActive = true
-        titleField.topAnchor.constraint(equalTo: view.topAnchor,
+        titleField.topAnchor.constraint(equalTo: backgroundContainer.topAnchor,
                                         constant: 100).isActive = true
         createButton.topAnchor.constraint(equalTo: titleField.bottomAnchor,
                                           constant: 16).isActive = true
         createButton.centerXAnchor.constraint(equalTo: titleField.centerXAnchor).isActive = true
         createButton.widthAnchor.constraint(greaterThanOrEqualToConstant: 60).isActive = true
+        titleField.text = editPost?.title
     }
     @objc func onCreateClicked() {
         guard let title = titleField.text,
