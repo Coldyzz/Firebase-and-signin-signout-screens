@@ -23,10 +23,10 @@ class NewPostViewController: UIViewController {
                                               width: 200,
                                               height: 48))
         field.placeholder = "Please Type Title..."
-        field.backgroundColor = .systemBackground
+        // field.backgroundColor = .systemBackground
         field.layer.cornerRadius = 8.0
-        field.layer.borderWidth = 1.0
-        field.layer.borderColor = UIColor.secondaryLabel.cgColor
+        field.layer.borderWidth = 0.5
+        // field.layer.borderColor = UIColor.secondaryLabel.cgColor
         field.translatesAutoresizingMaskIntoConstraints = false
         return field
     }()
@@ -48,13 +48,13 @@ class NewPostViewController: UIViewController {
     lazy var backgroundContainer: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 16
-        view.backgroundColor = .systemCyan
+        view.backgroundColor = .systemBackground
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemCyan
         if mode == NewPostMode.create {
             title = "Create New Post"
         } else {
