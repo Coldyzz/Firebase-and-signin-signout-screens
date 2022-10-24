@@ -13,6 +13,8 @@ struct Post: Codable {
     @DocumentID var id: String?
     let title: String
     let created: Date
+    // let authorId: String
+    // let attachments: [Attachment]
 }
 
 protocol PostsRepository {
