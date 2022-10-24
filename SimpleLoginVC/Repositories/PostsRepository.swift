@@ -9,6 +9,13 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+enum AttachmentType: Codable {
+    case photo, video, link
+}
+struct Attachment: Codable {
+    let type: AttachmentType
+    let url: URL
+}
 struct Post: Codable {
     @DocumentID var id: String?
     let title: String
