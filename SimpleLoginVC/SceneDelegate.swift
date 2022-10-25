@@ -10,9 +10,21 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
     var window: UIWindow?
+    let startAppWithProfile = true
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
-        guard let _ = (scene as? UIWindowScene) else { return }
+        // guard let _ = (scene as? UIWindowScene) else { return }
+        guard (scene as? UIWindowScene) != nil else { return }
+#if DEBUG
+        if startAppWithProfile {
+            let storyboard = UIStoryboard(name: "SetupProfile", bundle: nil)
+            let ctl = storyboard.instantiateViewController(withIdentifier: "setupProfileVC")
+            let navigationCtl = UINavigationController(rootViewController: ctl)
+            window?.rootViewController = navigationCtl
+            window?.makeKeyAndVisible()
+            return
+        }
+#endif
         if authenticationService.isAuthenticated() {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let homeVC = storyboard.instantiateViewController(withIdentifier: "homeViewController")
@@ -25,7 +37,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
-        // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
+        // The scene may re-connect later, as its session was not necessarily discarded
+        // (see `application:didDiscardSceneSessions` instead).
     }
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
