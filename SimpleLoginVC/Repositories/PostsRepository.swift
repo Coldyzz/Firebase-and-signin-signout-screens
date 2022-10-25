@@ -20,7 +20,7 @@ struct Attachment: Codable {
 struct Post: Codable {
     @DocumentID var id: String?
     let title: String
-    let created: Date
+    @ServerTimestamp var created: Date?
     let authorId: String
     let attachments: [Attachment]?
 }
@@ -73,7 +73,7 @@ class FirebasePostsRepository: PostsRepository {
         guard let currentUserId = Auth.auth().currentUser?.uid else {
             fatalError("Only Authenticated Users Allowe To Create Posts")
         }
-        var post = Post(title: title, created: Date(), authorId: currentUserId, attachments: attachments)
+        var post = Post(title: title, authorId: currentUserId, attachments: attachments)
         guard let reference = try? Firestore.firestore().collection("posts").addDocument(from: post) else {
             fatalError("Failed To Create New Post")
         }
