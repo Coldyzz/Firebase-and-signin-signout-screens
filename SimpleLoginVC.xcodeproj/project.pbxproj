@@ -10,6 +10,8 @@
 		EF2EE3AD2906DAF40045A51C /* UserProfilesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2EE3AC2906DAF40045A51C /* UserProfilesRepository.swift */; };
 		EF2EE3AF2906DBFF0045A51C /* CommentsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2EE3AE2906DBFF0045A51C /* CommentsRepository.swift */; };
 		EF2EE3B12906DCDD0045A51C /* ReactionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2EE3B02906DCDD0045A51C /* ReactionsRepository.swift */; };
+		EF2EE3B32908406D0045A51C /* SetupProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2EE3B22908406D0045A51C /* SetupProfile.storyboard */; };
+		EF2EE3B5290841100045A51C /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2EE3B4290841100045A51C /* SetupProfileViewController.swift */; };
 		EF58D68628EF540A00E24CD4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EF58D68528EF540A00E24CD4 /* FirebaseFirestore */; };
 		EF58D68828EF540A00E24CD4 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = EF58D68728EF540A00E24CD4 /* FirebaseFirestoreCombine-Community */; };
 		EF58D68A28EF540A00E24CD4 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EF58D68928EF540A00E24CD4 /* FirebaseFirestoreSwift */; };
@@ -38,6 +40,8 @@
 		EF2EE3AC2906DAF40045A51C /* UserProfilesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilesRepository.swift; sourceTree = "<group>"; };
 		EF2EE3AE2906DBFF0045A51C /* CommentsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsRepository.swift; sourceTree = "<group>"; };
 		EF2EE3B02906DCDD0045A51C /* ReactionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionsRepository.swift; sourceTree = "<group>"; };
+		EF2EE3B22908406D0045A51C /* SetupProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetupProfile.storyboard; sourceTree = "<group>"; };
+		EF2EE3B4290841100045A51C /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
 		EF58D68B28F5CDB100E24CD4 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		EF76FCA128F7134D00314932 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		EF776BF828E747CE0016CB5E /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				EF776BFC28EC8B320016CB5E /* HomeViewController.swift */,
 				EF58D68B28F5CDB100E24CD4 /* NewPostViewController.swift */,
 				EF76FCA128F7134D00314932 /* ResetPasswordViewController.swift */,
+				EF2EE3B22908406D0045A51C /* SetupProfile.storyboard */,
+				EF2EE3B4290841100045A51C /* SetupProfileViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -229,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF2EE3B32908406D0045A51C /* SetupProfile.storyboard in Resources */,
 				EF8B60E928DDE9D9003F906E /* LaunchScreen.storyboard in Resources */,
 				EF8B60E628DDE9D9003F906E /* Assets.xcassets in Resources */,
 				EF776C0428EDE6190016CB5E /* PostCell.xib in Resources */,
@@ -273,6 +280,7 @@
 				EF2EE3AF2906DBFF0045A51C /* CommentsRepository.swift in Sources */,
 				EF2EE3B12906DCDD0045A51C /* ReactionsRepository.swift in Sources */,
 				EF776BFD28EC8B320016CB5E /* HomeViewController.swift in Sources */,
+				EF2EE3B5290841100045A51C /* SetupProfileViewController.swift in Sources */,
 				EF776BF928E747CE0016CB5E /* EmailTextField.swift in Sources */,
 				EF8B60DF28DDE9D1003F906E /* SceneDelegate.swift in Sources */,
 				EF2EE3AD2906DAF40045A51C /* UserProfilesRepository.swift in Sources */,
