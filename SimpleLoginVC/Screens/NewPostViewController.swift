@@ -85,22 +85,36 @@ class NewPostViewController: UIViewController {
               title.count > 3 else {
             return
         }
-        postsRepository.create(value: Post(title: title,
-                                           created: Date.now)) { [weak self] newPost in
+        let newPost = postsRepository.create(title: title, attachments: nil)
+        self.onCreateCompletion?(newPost)
+        self.navigationController?.popViewController(animated: true)
+        /*
+         postsRepository.create(value: Post(title: title,created: Date.now)) { [weak self] newPost in
             self?.onCreateCompletion?(newPost)
             self?.navigationController?.popViewController(animated: true)
         }
+        */
     }
     @objc func onUpdateClicked() {
-        guard let post = editPost,
+        guard let oldPost = editPost,
               let title = titleField.text, title.count > 3 else {
             return
         }
+        let updatePost = Post(id: oldPost.id,
+                              title: title,
+                              created: oldPost.created,
+                              authorId: oldPost.authorId,
+                              attachments: oldPost.attachments)
+        postsRepository.update(value: updatePost)
+        self.onUpdateCompletion?(updatePost)
+        self.navigationController?.popViewController(animated: true)
+        /*
         postsRepository.update(value: Post(id: post.id,
                                            title: title,
                                            created: post.created)) { [weak self] updatedPost in
             self?.onUpdateCompletion?(updatedPost)
             self?.navigationController?.popViewController(animated: true)
         }
+        */
     }
 }
