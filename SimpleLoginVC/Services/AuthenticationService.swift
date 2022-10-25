@@ -20,7 +20,7 @@ class FirebaseAuthenticationService: AuthenticationService {
     func signIn(email: String, password: String, completion: @escaping (String?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if result?.user != nil {
-                //UserDefaults.standard.set(true, forKey: "USER_OK")
+                // UserDefaults.standard.set(true, forKey: "USER_OK")
                 completion(nil)
             } else {
                 let massage = error?.localizedDescription
@@ -31,7 +31,7 @@ class FirebaseAuthenticationService: AuthenticationService {
     func signUp(email: String, password: String, completion: @escaping (String?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if result?.user != nil {
-                //UserDefaults.standard.set(true, forKey: "USER_OK")
+                // UserDefaults.standard.set(true, forKey: "USER_OK")
                 completion(nil)
             } else {
                 let massage = error?.localizedDescription
@@ -47,13 +47,13 @@ class FirebaseAuthenticationService: AuthenticationService {
             return false
         }}*/
     func logout() {
-        //UserDefaults.standard.set(false, forKey: "USER_OK") это можно использовать для других серверов бд
+        // UserDefaults.standard.set(false, forKey: "USER_OK") это можно использовать для других серверов бд
         try? Auth.auth().signOut()
     }
     func isAuthenticated() -> Bool {
         /* let hasUser = UserDefaults.standard.bool(forKey: "USER_OK")
          return hasUser */
-        let hasUser = Auth.auth().currentUser != nil //в фаербэйсе уже есть решение
+        let hasUser = Auth.auth().currentUser != nil // в фаербэйсе уже есть решение
         return hasUser
     }
     func forgotPassword(email: String, completion: @escaping (String?) -> Void) {

@@ -10,7 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
     var window: UIWindow?
-    let startAppWithProfile = true
+    let startAppWithProfile = false
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
         // guard let _ = (scene as? UIWindowScene) else { return }

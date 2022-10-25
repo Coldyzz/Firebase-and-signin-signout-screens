@@ -36,11 +36,9 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                                               style: UIAlertAction.Style.default))
                 self.present(alert, animated: true)
             } else {
-                guard let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController")
-                        as? HomeViewController else {
-                    return
-                }
-                self.navigationController?.pushViewController(homeVC, animated: true)
+                let storyboard = UIStoryboard(name: "SetupProfile", bundle: nil)
+                let ctl = storyboard.instantiateViewController(withIdentifier: "setupProfileVC")
+                self.navigationController?.pushViewController(ctl, animated: true)
             }
         }
     }
