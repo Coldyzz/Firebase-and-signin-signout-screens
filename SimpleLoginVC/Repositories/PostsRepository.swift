@@ -31,7 +31,6 @@ protocol PostsRepository {
     func update(value: Post)
     func delete(postId: String)
 }
-// CRUD (Create Read Update Delete)
 class FirebasePostsRepository: PostsRepository {
     // можно сократить пару строк
     /*lazy var postsCollection: CollectionReference = {
@@ -39,35 +38,12 @@ class FirebasePostsRepository: PostsRepository {
      }()*/
     func delete(postId: String) {
         Firestore.firestore().collection("posts").document(postId).delete()
-        /*
-         { error in
-         if error == nil {
-         completion(Post(id: value.id,
-         title: value.title,
-         created: value.created))
-         } else {
-         completion(nil)
-         }
-         }
-         */
     }
     func update(value: Post) {
         guard let documentID = value.id else {
-            // completion(nil)
             return
         }
         try? Firestore.firestore().collection("posts").document(documentID).setData(from: value)
-        /*
-         {error in
-         if error == nil {
-         completion(Post(id: value.id,
-         title: value.title,
-         created: value.created))
-         } else {
-         completion(nil)
-         }
-         }
-         */
     }
     func create(title: String, attachments: [Attachment]?) -> Post {
         guard let currentUserId = Auth.auth().currentUser?.uid else {
@@ -79,21 +55,6 @@ class FirebasePostsRepository: PostsRepository {
         }
         post.id = reference.documentID
         return post
-        //completion(Post(id: reference.documentID, title: value.title, created: value.created))
-        
-        // пример для работы с другими серверами
-        
-        /*
-         try? Firestore.firestore().collection("posts").addDocument(from: value) {error in
-         if error == nil {
-         completion(Post(id: value.id,
-         title: value.title,
-         created: value.created))
-         } else {
-         completion(nil)
-         }
-         }
-         */
     }
     func getAll(completion: @escaping ([Post]) -> Void) {
         Firestore.firestore()
@@ -108,24 +69,10 @@ class FirebasePostsRepository: PostsRepository {
                     guard let post = try? doc.data(as: Post.self) else {
                         continue
                     }
-                    // пример без использования firestoreswift
-                    /*
-                     let id = doc.documentID
-                     let data = doc.data()
-                     guard let title = data["title"] as? String else {
-                     continue
-                     }
-                     let post = Post(id: id, title: title)
-                     */
                     posts.append(post)
                 }
                 completion(posts)
             }
     }
 }
-// пример заглушки
-/*class DummyPostsRepository: PostsRepository {
- func getAll(completion: ([Post]) -> Void) {
- completion([Post(id: "post1", title: "Welcome in the hood"), Post(id: "post2", title: "Get your pizza")])
- }
- }*/
+

@@ -8,14 +8,12 @@
 import UIKit
 
 class SetupProfileViewController: UIViewController {
-    
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var birthdayField: UITextField!
     @IBOutlet weak var stateField: UITextField!
     @IBOutlet weak var cityField: UITextField!
     let profilesRepository: UserProfilesRepository = FirebaseUserProfilesRepository()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -35,7 +33,6 @@ class SetupProfileViewController: UIViewController {
         guard let city = cityField.text else {
             return
         }
-        
         let profile = UserProfile(firstName: firstName,
                                   lastName: lastName,
                                   birthday: Date(),

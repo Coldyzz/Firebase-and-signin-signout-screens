@@ -88,12 +88,6 @@ class NewPostViewController: UIViewController {
         let newPost = postsRepository.create(title: title, attachments: nil)
         self.onCreateCompletion?(newPost)
         self.navigationController?.popViewController(animated: true)
-        /*
-         postsRepository.create(value: Post(title: title,created: Date.now)) { [weak self] newPost in
-            self?.onCreateCompletion?(newPost)
-            self?.navigationController?.popViewController(animated: true)
-        }
-        */
     }
     @objc func onUpdateClicked() {
         guard let oldPost = editPost,
@@ -108,13 +102,5 @@ class NewPostViewController: UIViewController {
         postsRepository.update(value: updatePost)
         self.onUpdateCompletion?(updatePost)
         self.navigationController?.popViewController(animated: true)
-        /*
-        postsRepository.update(value: Post(id: post.id,
-                                           title: title,
-                                           created: post.created)) { [weak self] updatedPost in
-            self?.onUpdateCompletion?(updatedPost)
-            self?.navigationController?.popViewController(animated: true)
-        }
-        */
     }
 }
