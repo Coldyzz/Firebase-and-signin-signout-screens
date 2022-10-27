@@ -14,6 +14,7 @@ protocol AuthenticationService {
     func forgotPassword(email: String, completion: @escaping (String?) -> Void)
     func logout()
     func isAuthenticated() -> Bool
+    func currentUserId() -> String?
 }
 
 class FirebaseAuthenticationService: AuthenticationService {
@@ -39,13 +40,6 @@ class FirebaseAuthenticationService: AuthenticationService {
             }
         }
     }
-    /* func logout() -> Bool {
-        do {
-            try Auth.auth().signOut()
-            return true
-        } catch {
-            return false
-        }}*/
     func logout() {
         // UserDefaults.standard.set(false, forKey: "USER_OK") это можно использовать для других серверов бд
         try? Auth.auth().signOut()
@@ -55,6 +49,9 @@ class FirebaseAuthenticationService: AuthenticationService {
          return hasUser */
         let hasUser = Auth.auth().currentUser != nil // в фаербэйсе уже есть решение
         return hasUser
+    }
+    func currentUserId() -> String? {
+        return Auth.auth().currentUser?.uid
     }
     func forgotPassword(email: String, completion: @escaping (String?) -> Void) {
         Auth.auth().sendPasswordReset(withEmail: email) { error in
