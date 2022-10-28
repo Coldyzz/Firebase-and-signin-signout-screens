@@ -32,9 +32,9 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkI-6v-J6u">
-                        <rect key="frame" x="76" y="8" width="60" height="21"/>
+                        <rect key="frame" x="76" y="8" width="150" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="60" id="l9h-IB-OKK"/>
+                            <constraint firstAttribute="width" constant="150" id="l9h-IB-OKK"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -65,6 +65,7 @@
             <connections>
                 <outlet property="authorLabel" destination="xkI-6v-J6u" id="PoZ-3I-qjt"/>
                 <outlet property="deleteButton" destination="qGI-ur-C9T" id="tdg-sT-5ST"/>
+                <outlet property="photoView" destination="OT7-Z6-Il5" id="MSb-Qe-3He"/>
                 <outlet property="titleLabel" destination="vQN-cu-q5b" id="aro-p6-IUi"/>
             </connections>
             <point key="canvasLocation" x="186.95652173913044" y="91.071428571428569"/>

@@ -27,6 +27,7 @@
 		EF81A01428E212640029516D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EF81A01328E212640029516D /* FirebaseAnalytics */; };
 		EF81A01628E212640029516D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EF81A01528E212640029516D /* FirebaseAuth */; };
 		EF81A01828E34A2B0029516D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF81A01728E34A2B0029516D /* RegistrationViewController.swift */; };
+		EF8A6FA9290C15AE00035E2E /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = EF8A6FA8290C15AE00035E2E /* AlamofireImage */; };
 		EF8B60DD28DDE9D1003F906E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8B60DC28DDE9D1003F906E /* AppDelegate.swift */; };
 		EF8B60DF28DDE9D1003F906E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8B60DE28DDE9D1003F906E /* SceneDelegate.swift */; };
 		EF8B60E128DDE9D1003F906E /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8B60E028DDE9D1003F906E /* LogInViewController.swift */; };
@@ -73,6 +74,7 @@
 				EF58D68828EF540A00E24CD4 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				EF81A01628E212640029516D /* FirebaseAuth in Frameworks */,
 				EF58D68628EF540A00E24CD4 /* FirebaseFirestore in Frameworks */,
+				EF8A6FA9290C15AE00035E2E /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +190,7 @@
 				EF58D68528EF540A00E24CD4 /* FirebaseFirestore */,
 				EF58D68728EF540A00E24CD4 /* FirebaseFirestoreCombine-Community */,
 				EF58D68928EF540A00E24CD4 /* FirebaseFirestoreSwift */,
+				EF8A6FA8290C15AE00035E2E /* AlamofireImage */,
 			);
 			productName = SimpleLoginVC;
 			productReference = EF8B60D928DDE9D1003F906E /* SimpleLoginVC.app */;
@@ -220,6 +223,7 @@
 			packageReferences = (
 				EF81A01228E212640029516D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				EF58D68428EF540A00E24CD4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				EF8A6FA7290C15AD00035E2E /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 			);
 			productRefGroup = EF8B60DA28DDE9D1003F906E /* Products */;
 			projectDirPath = "";
@@ -525,6 +529,14 @@
 				kind = branch;
 			};
 		};
+		EF8A6FA7290C15AD00035E2E /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -552,6 +564,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EF81A01228E212640029516D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		EF8A6FA8290C15AE00035E2E /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF8A6FA7290C15AD00035E2E /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
